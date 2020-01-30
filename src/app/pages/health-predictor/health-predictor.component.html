@@ -13,7 +13,7 @@
     <nb-card-header>
       <div>
         <div>
-          <h2 style="color:#5781ff;">Heart Attack Predictor</h2>
+          <h2 id="heartAttackPredictorTitle" style="color:#5781ff;">Heart Attack Predictor</h2>
         </div>
       </div>
     </nb-card-header>
@@ -23,10 +23,10 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="age" class="label">
+            <label for="age" class="label" id="ageLabel" >
               Age              
             </label>
-            <input type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
+            <input id="ageInput" type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
               <div *ngIf="f.age.errors.required">Age is required</div>
             </div>
@@ -35,31 +35,31 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="sex" class="label block-label">Gender</label>
-            <nb-radio-group formControlName="sex">
-              <nb-radio value="male">Male</nb-radio>
-              <nb-radio value="female">Female</nb-radio>
+            <label id="genderLabel" for="sex" class="label block-label">Gender</label>
+            <nb-radio-group formControlName="sex" id="genderRadio">
+              <nb-radio id="maleRadio" value="male">Male</nb-radio>
+              <nb-radio id="femaleRadio" value="female">Female</nb-radio>
             </nb-radio-group>
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="cp" class="label block-label">Do you experience Chest Pain?</label>
-            <nb-radio-group name="cp">
-              <nb-radio value="yes">Yes</nb-radio>
-              <nb-radio value="no">No</nb-radio>
+            <label id="chestPainLabel" for="cp" class="label block-label">Do you experience Chest Pain?</label>
+            <nb-radio-group name="cp" id="chestPainRadio">
+              <nb-radio id="chestPainYesRadio" value="yes">Yes</nb-radio>
+              <nb-radio id="chestPainNoRadio" value="no">No</nb-radio>
             </nb-radio-group>
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="trestbps" class="label">
+            <label id="bloodPressureLabel" for="trestbps" class="label">
               Blood Pressure Level
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="Eg: 120" formControlName="trestbps">
+            <input id="bloddPressureInput" type="text" nbInput fullWidth placeholder="Eg: 120" formControlName="trestbps">
           </div>
         </div>
       </div>
@@ -67,11 +67,11 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="chol" class="label">
+            <label id="cholesterolLabel" for="chol" class="label">
               Cholesterol Level
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="Ex: 323" formControlName="chol">
+            <input id="cholesterolInput" type="text" nbInput fullWidth placeholder="Ex: 323" formControlName="chol">
           </div>
         </div>
 
@@ -110,44 +110,44 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="exang" class="label block-label">
+            <label id="anginaLabel" for="exang" class="label block-label">
               Excercise includes Angina
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <nb-radio-group name="exang">
-              <nb-radio value="yes">Yes</nb-radio>
-              <nb-radio value="no">No</nb-radio>
+            <nb-radio-group name="exang" id="anginaRadio">
+              <nb-radio id="anginaYesRadio" value="yes">Yes</nb-radio>
+              <nb-radio id="anginaNoRadio" value="no">No</nb-radio>
             </nb-radio-group>
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="oldpeak" class="label">
+            <label id="depressionLabel" for="oldpeak" class="label">
               Depression induced by exercise
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="oldpeak">
+            <input id="depressionInput" type="text" nbInput fullWidth placeholder="0 - 10" formControlName="oldpeak">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="slope" class="label">
+            <label id="peakExerciseLabel" for="slope" class="label">
               Slope of the peak exercise
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="0 - 1" formControlName="slope">
+            <input id="peakExerciseInput" type="text" nbInput fullWidth placeholder="0 - 1" formControlName="slope">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="ca" class="label">
+            <label id="fluoroscopyLabel" for="ca" class="label">
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
               Vessels colored by flouoroscopy
             </label>
-            <input type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca">
+            <input id="fluoroscopyInput" type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca">
           </div>
         </div>
       </div>
@@ -155,11 +155,11 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="thal" class="label">
+            <label id="thalassemiaLabel" for="thal" class="label">
               Thalassemia Level
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="3=normal 6=fixed defect 7=reversible defect"
+            <input id="thalassemiaInput" type="text" nbInput fullWidth placeholder="3=normal 6=fixed defect 7=reversible defect"
               formControlName="thal">
           </div>
         </div>

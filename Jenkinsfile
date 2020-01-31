@@ -17,15 +17,16 @@ pipeline {
                   }
                stage('Archiving Artifacts') { 
                          steps{ 
+                             archiveArtifacts 'E:/Application/Test/Live/dist/**'
                              archiveArtifacts 'dist/**' 
                          } 
                  } 
                   stage('Deployment'){
 			             steps{
                      script{
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Live")])
-                       dir('E:\\Application\\Test\\Config'){
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "E:\\Application\\Test\\Live\\dist")])
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist/**", targetLocation: "E:/Application/Test/Live")])
+                       dir('E:/Application/Test/Config'){
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "/**", targetLocation: "E:/Application/Test/Live/dist")])
                        }
                      }
 			             }

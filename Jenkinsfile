@@ -12,7 +12,7 @@ pipeline {
                             steps { 
                               script{
                                 bat label: '', script: 'npm install'
-                                bat label: '', script: 'npm run ng -- build --prod'
+                                bat label: '', script: 'npm run ng -- build '
                               }
                             }
                   }

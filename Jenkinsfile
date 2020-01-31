@@ -29,7 +29,7 @@ pipeline {
                          fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "${path}\\Backup")])
                        }
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist/**", targetLocation: "${path}/Live")])
-                       dir('${path}/Config')
+                       dir("${path}/Config")
                        {
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "${path}/Live/dist")])
                        }

@@ -26,7 +26,7 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
 
   // return observableOf((HeartAttackPredictor as any).default); 
 
-   return this.http.get<HeartAttackCounter[]>(environment.heartiHealthUrl);
+   return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);
     
   }
 

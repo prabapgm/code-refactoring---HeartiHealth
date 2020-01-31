@@ -77,31 +77,34 @@
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="fbs" class="label">
+            <label for="fbs" class="label" id="fastingBloodSugarLabel">
               Fasting Blood Sugar Level
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="Text field" formControlName="fbs">
+            <input id="fastingBloodSugarInput" type="text" nbInput fullWidth placeholder="Eg: 123" formControlName="fbs">
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="" class="label">
+            <label for="" class="label block-label" id="restECGLabel">
               Resting Electrocardiographic
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="restecg" formControlName="restecg">
+            <nb-radio-group name="restecg" id="restECGRadio">
+              <nb-radio id="restECGPositiveRadio" value="1">Positive</nb-radio>
+              <nb-radio id="restECGNegativeRadio" value="0">Negative</nb-radio>
+            </nb-radio-group>
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
-            <label for="" class="label">
+            <label for="" class="label" id="heartRateLabel">
               Maximum Heart Rate Achieved
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input type="text" nbInput fullWidth placeholder="323" formControlName="thalach">
+            <input id="heartRateLabel" type="text" nbInput fullWidth placeholder="323" formControlName="thalach">
           </div>
         </div>
       </div>
@@ -167,7 +170,7 @@
 
     </nb-card-body>
     <nb-card-footer>
-      <button nbButton size="medium" shape="semi-round">Calculate</button>
+      <button nbButton size="medium" shape="semi-round" id="heartPredictorCalculateBtn">Calculate</button>
     </nb-card-footer>
   </nb-card>
 </form>

@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
 })
 export class ECommerceComponent {
   constructor(private router: Router){
-    const isUserLoggedIn = JSON.parse(localStorage.getItem('isUserLoggedIn'));
+    // const isUserLoggedIn = JSON.parse(localStorage.getItem('isUserLoggedIn'));
 
-    if(!isUserLoggedIn){
-      router.navigateByUrl('/login');
-    }
+    // if(!isUserLoggedIn){
+    //   router.navigateByUrl('/login');
+    // }
   }
 }

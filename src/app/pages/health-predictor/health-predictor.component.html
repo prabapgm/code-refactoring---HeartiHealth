@@ -27,7 +27,7 @@
             <label for="age" class="label" id="ageLabel" >
               Age              
             </label>
-            <input id="ageInput" type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
+            <input id="ageInput" type="number" min="1" max="100" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
               <div *ngIf="f.age.errors.required">Age is required</div>
             </div>
@@ -82,7 +82,7 @@
               Fasting Blood Sugar Level
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input id="fastingBloodSugarInput" type="text" nbInput fullWidth placeholder="Eg: 123" formControlName="fbs">
+            <input id="fastingBloodSugarInput" type="text" nbInput fullWidth placeholder="Ex: 123" formControlName="fbs">
           </div>
         </div>
 
@@ -115,7 +115,7 @@
         <div class="col-lg-3">
           <div class="form-group">
             <label id="anginaLabel" for="exang" class="label block-label">
-              Exercise includes Angina
+              Excercise includes Angina
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <nb-radio-group name="exang" id="anginaRadio">

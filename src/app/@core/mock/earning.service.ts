@@ -4,6 +4,7 @@ import { LiveUpdateChart, PieChart, EarningData } from '../data/earning';
 import { LivePrediction } from '../data/live-prediction';
 import { HttpClient } from '@angular/common/http';
 import * as LivePredictions from '../../../assets/mock/livePrediction.json'
+import { environment } from '../../../environments/environment'
 
 @Injectable()
 
@@ -28,7 +29,7 @@ export class EarningService  implements OnInit{
   {
   //return observableOf((LivePredictions as any).default);
   
-  return this.http.get<LivePrediction[]>("http://172.30.12.171:8083/api/livePredictions/");
+  return this.http.get<LivePrediction[]>(environment.livePredictionUrl);
   }
 
 }

@@ -16,44 +16,44 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
 
   constructor(private http: HttpClient) {
     super();
-    this.getDataForHeartAttackCounter().subscribe(
-      res => {
-        this.HeartAttackCounter = res;
-        this.data = {
-          firstLine: this.getDataForFirstLine(),
-          secondLine: this.getDataForSecondLine(),
-        };
-      });    
+   
   }
   ngOnInit() {
    
   }
   getDataForHeartAttackCounter(): Observable<HeartAttackCounter[]> {
 
-  return observableOf((HeartAttackPredictor as any).default); 
 
-   //return this.http.get<HeartAttackCounter[]>("http://172.30.12.171:8083/api/intervalReport/weeklyReport/");
+  // return observableOf((HeartAttackPredictor as any).default); 
+
+   return this.http.get<HeartAttackCounter[]>(environment.heartiHealthUrl);
     
   }
 
-  getDataForFirstLine(): number[] {  
-    
+  getDataForFirstLine(): number[] {   
+
+    //Write the code to get predicted value from our object
     let firstLinedata: number[] = [];
-    for (let i = 0; i < this.HeartAttackCounter.length; i++) {    
+    for (let i = 0; i < this.HeartAttackCounter.length; i++) {
+     //var a= HeartAttackCounter[0].cured;
       firstLinedata.push(this.HeartAttackCounter[i].predicted);
     }
 
-    return firstLinedata; 
+    return firstLinedata;
+      
   }
 
   getDataForSecondLine(): number[] {
+
+    //Write the code to get predicted value from our object
     let secondLinedata: number[] = [];
     for (let i = 0; i < this.HeartAttackCounter.length; i++) {
       
       secondLinedata.push(this.HeartAttackCounter[i].cured);
     }
 
-    return secondLinedata; 
+    return secondLinedata;
+
   }
 
   createEmptyArray(nPoints: number) {

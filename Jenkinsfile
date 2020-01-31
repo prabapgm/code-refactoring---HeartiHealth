@@ -25,7 +25,7 @@ pipeline {
                      script{
                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist/**", targetLocation: "E:/Application/hearti-health/Live")])
                        dir('E:/Application/hearti-health/Config'){
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "/**", targetLocation: "E:/Application/hearti-health/Live/dist")])
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "E:/Application/hearti-health/Live/dist")])
                        }
                      }
 			             }

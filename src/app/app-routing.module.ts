@@ -9,6 +9,7 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 import { PLoginComponent } from './auth/p-login/p-login.component';
+import { PRegisterComponent } from './auth/p-register/p-register.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,15 @@ const routes: Routes = [
     children: [{
       path: '',
       component: PLoginComponent,
+    }
+    ]
+  },
+  {
+    path: 'register',
+    component: NbAuthComponent,
+    children: [{
+      path: '',
+      component: PRegisterComponent,
     }
     ]
   },
@@ -56,7 +66,7 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
 ];
 

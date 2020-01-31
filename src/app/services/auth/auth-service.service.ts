@@ -13,17 +13,20 @@ export class AuthServiceService {
 
   userData: any;
 
-  login(userId){
-    return this.httpClient.get('http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api/User/' + userId);
+  login(userData){
+    return this.apiService.get(this.authURL + userData.email);
   }
 
   register(userData){
-    return this.httpClient.post('http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api/User/', userData);
+    return this.apiService.post('http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api/User/', userData, null);
   }
 
   checkIfLoggedIn(userId){
     const userData =  this.httpClient.get('http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api/User/' + userId)
-    return userData;
+
+    this.apiService.get(this.authURL + userId).subscribe((response: any) => {
+      return response.isLoggedIn;
+    });
   }
 
 }

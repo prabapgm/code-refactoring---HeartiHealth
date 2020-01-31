@@ -16,26 +16,17 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
 
   constructor(private http: HttpClient) {
     super();
-    this.getDataForHeartAttackCounter().subscribe(
-      res => {
-        this.HeartAttackCounter = res;
-        this.data = {
-          firstLine: this.getDataForFirstLine(),
-          secondLine: this.getDataForSecondLine(),
-        };
-      });    
+   
   }
   ngOnInit() {
    
   }
   getDataForHeartAttackCounter(): Observable<HeartAttackCounter[]> {
 
-    //  this.HeartAttackCounter  = (HeartAttackPredictor as any).default;
-    //this.HeartAttackCounter= HeartAttackPredictor;
-    //this.HeartAttackCounter = DummyJSON;
-   return observableOf((HeartAttackPredictor as any).default); 
 
-   // return this.http.get<HeartAttackCounter[]>("http://172.30.12.171:8083/api/intervalReport/weeklyReport/");
+  // return observableOf((HeartAttackPredictor as any).default); 
+
+   return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);
     
   }
 
@@ -49,12 +40,7 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     }
 
     return firstLinedata;
-    // return this.createEmptyArray(100)
-    //   .map((_, index) => {
-    //     const oneFifth = index / 5;
-
-    //     return (Math.sin(oneFifth) * (oneFifth - 10) + index / 6) * 5;
-    //   });
+      
   }
 
   getDataForSecondLine(): number[] {
@@ -67,12 +53,7 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     }
 
     return secondLinedata;
-    // return this.createEmptyArray(100)
-    //   .map((_, index) => {
-    //     const oneFifth = index / 5;
 
-    //     return (Math.cos(oneFifth) * (oneFifth - 10) + index / 6) * 5;
-    //   });
   }
 
   createEmptyArray(nPoints: number) {

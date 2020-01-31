@@ -17,7 +17,6 @@ pipeline {
                   }
                stage('Archiving Artifacts') { 
                          steps{ 
-                             archiveArtifacts 'E:/Application/Test/Live/dist/**'
                              archiveArtifacts 'dist/**' 
                          } 
                  } 

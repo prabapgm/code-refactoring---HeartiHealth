@@ -23,9 +23,9 @@ pipeline {
                   stage('Deployment'){
 			             steps{
                      script{
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist/**", targetLocation: "E:/Application/Test/Live")])
-                       dir('E:/Application/Test/Config'){
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "/**", targetLocation: "E:/Application/Test/Live/dist")])
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist/**", targetLocation: "E:/Application/hearti-health/Live")])
+                       dir('E:/Application/hearti-health/Config'){
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "/**", targetLocation: "E:/Application/hearti-health/Live/dist")])
                        }
                      }
 			             }

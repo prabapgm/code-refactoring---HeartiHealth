@@ -30,49 +30,30 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
   }
   getDataForHeartAttackCounter(): Observable<HeartAttackCounter[]> {
 
-    //  this.HeartAttackCounter  = (HeartAttackPredictor as any).default;
-    //this.HeartAttackCounter= HeartAttackPredictor;
-    //this.HeartAttackCounter = DummyJSON;
-   return observableOf((HeartAttackPredictor as any).default); 
+  return observableOf((HeartAttackPredictor as any).default); 
 
-   // return this.http.get<HeartAttackCounter[]>("http://172.30.12.171:8083/api/intervalReport/weeklyReport/");
+   //return this.http.get<HeartAttackCounter[]>("http://172.30.12.171:8083/api/intervalReport/weeklyReport/");
     
   }
 
-  getDataForFirstLine(): number[] {   
-
-    //Write the code to get predicted value from our object
+  getDataForFirstLine(): number[] {  
+    
     let firstLinedata: number[] = [];
-    for (let i = 0; i < this.HeartAttackCounter.length; i++) {
-     //var a= HeartAttackCounter[0].cured;
+    for (let i = 0; i < this.HeartAttackCounter.length; i++) {    
       firstLinedata.push(this.HeartAttackCounter[i].predicted);
     }
 
-    return firstLinedata;
-    // return this.createEmptyArray(100)
-    //   .map((_, index) => {
-    //     const oneFifth = index / 5;
-
-    //     return (Math.sin(oneFifth) * (oneFifth - 10) + index / 6) * 5;
-    //   });
+    return firstLinedata; 
   }
 
   getDataForSecondLine(): number[] {
-
-    //Write the code to get predicted value from our object
     let secondLinedata: number[] = [];
     for (let i = 0; i < this.HeartAttackCounter.length; i++) {
       
       secondLinedata.push(this.HeartAttackCounter[i].cured);
     }
 
-    return secondLinedata;
-    // return this.createEmptyArray(100)
-    //   .map((_, index) => {
-    //     const oneFifth = index / 5;
-
-    //     return (Math.cos(oneFifth) * (oneFifth - 10) + index / 6) * 5;
-    //   });
+    return secondLinedata; 
   }
 
   createEmptyArray(nPoints: number) {

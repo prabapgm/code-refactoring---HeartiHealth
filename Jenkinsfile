@@ -1,3 +1,4 @@
+def path = "E:/Application/hearti-health"
 pipeline {
          agent any
              stages {
@@ -11,7 +12,7 @@ pipeline {
                             steps { 
                               script{
                                 bat label: '', script: 'npm install'
-                                bat label: '', script: 'npm run ng -- build'
+                                bat label: '', script: 'npm run ng -- build --prod'
                               }
                             }
                   }
@@ -23,9 +24,14 @@ pipeline {
                   stage('Deployment'){
 			             steps{
                      script{
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist/**", targetLocation: "E:/Application/hearti-health/Live")])
-                       dir('E:/Application/hearti-health/Config'){
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "E:/Application/hearti-health/Live/dist")])
+                       dir("${path}\\Live")
+                       {
+                         fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "${path}\\Backup")])
+                       }
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist/**", targetLocation: "${path}/Live")])
+                       dir('${path}/Config')
+                       {
+                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "${path}/Live/dist")])
                        }
                      }
 			             }

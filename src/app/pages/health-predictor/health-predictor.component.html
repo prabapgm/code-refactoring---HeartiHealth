@@ -13,7 +13,8 @@
     <nb-card-header>
       <div>
         <div>
-          <h2 id="heartAttackPredictorTitle" style="color:#5781ff;">Heart Attack Predictor</h2>
+          <img src="../../../assets/images/health-predictor-logo.png" alt="" style="width: 50px;">
+          <h2 id="heartAttackPredictorTitle" style="color:#5781ff; display: inline-block; margin-left: 20px;">Heart Attack Predictor</h2>
         </div>
       </div>
     </nb-card-header>
@@ -26,7 +27,7 @@
             <label for="age" class="label" id="ageLabel" >
               Age              
             </label>
-            <input id="ageInput" type="text" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
+            <input id="ageInput" type="number" min="1" max="100" nbInput fullWidth placeholder="Eg: 32" formControlName="age">
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
               <div *ngIf="f.age.errors.required">Age is required</div>
             </div>
@@ -71,7 +72,7 @@
               Cholesterol Level
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input id="cholesterolInput" type="text" nbInput fullWidth placeholder="Ex: 323" formControlName="chol">
+            <input id="cholesterolInput" type="text" nbInput fullWidth placeholder="Eg: 323" formControlName="chol">
           </div>
         </div>
 
@@ -81,7 +82,7 @@
               Fasting Blood Sugar Level
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <input id="fastingBloodSugarInput" type="text" nbInput fullWidth placeholder="Eg: 123" formControlName="fbs">
+            <input id="fastingBloodSugarInput" type="text" nbInput fullWidth placeholder="Ex: 123" formControlName="fbs">
           </div>
         </div>
 
@@ -147,8 +148,8 @@
         <div class="col-lg-3">
           <div class="form-group">
             <label id="fluoroscopyLabel" for="ca" class="label">
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
               Vessels colored by flouoroscopy
+              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="fluoroscopyInput" type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca">
           </div>

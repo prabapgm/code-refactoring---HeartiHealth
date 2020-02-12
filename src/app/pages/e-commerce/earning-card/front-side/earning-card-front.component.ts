@@ -22,10 +22,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   currencies: string[] = ['Chest Pain', 'Blood Pressure', 'Cholesterol'];
   currentTheme: string;
   predictionLiveUpdateCardData : LivePrediction;
-  liveUpdateChartData : SymptomPredictonMapper[] =[];
- 
-
-  
+  liveUpdateChartData : SymptomPredictonMapper[] =[]; 
 
 
   constructor(private themeService: NbThemeService,

@@ -21,13 +21,10 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
   ngOnInit() {
    
   }
-  getDataForHeartAttackCounter(): Observable<HeartAttackCounter[]> {
-
-
-  return observableOf((HeartAttackPredictor as any).default); 
-
-   //return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);
-    
+  
+  getDataForHeartAttackCounter(): Observable<HeartAttackCounter[]> {  
+    //return observableOf((HeartAttackPredictor as any).default); 
+    return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);    
   }
 
   getDataForFirstLine(): number[] {   
@@ -38,6 +35,7 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
      //var a= HeartAttackCounter[0].cured;
       firstLinedata.push(this.HeartAttackCounter[i].predicted);
     }
+
 
     return firstLinedata;
       
@@ -60,7 +58,8 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     return Array.from(Array(nPoints));
   }
 
-  getChartData(): Observable<{ firstLine: number[]; secondLine: number[]; }> {
+  getChartData(): Observable<{ firstLine: number[]; secondLine: number[]; }> {   
+   
     return observableOf(this.data);
   }
 }

@@ -12,6 +12,7 @@ import { PLoginComponent } from './auth/p-login/p-login.component';
 import { PRegisterComponent } from './auth/p-register/p-register.component';
 
 
+
 const routes: Routes = [
   {
     path: 'pages',
@@ -68,7 +69,10 @@ const routes: Routes = [
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
+  
 ];
+
+
 
 const config: ExtraOptions = {
   useHash: false,

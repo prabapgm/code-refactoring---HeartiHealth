@@ -13,6 +13,7 @@ import { PRegisterComponent } from './auth/p-register/p-register.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
 
+
 const routes: Routes = [
   {
     path: 'pages',
@@ -70,7 +71,10 @@ const routes: Routes = [
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
+  
 ];
+
+
 
 const config: ExtraOptions = {
   useHash: false,

@@ -31,15 +31,6 @@ pipeline {
                      }
 			             }
 		           }
-               stage('RestartApp')
-               {
-                 steps{
-                   script{
-                     bat "RestartWebsite.bat"
-                   }
-                 }
-               }
-           }
     /* post {
         success {
             mail to: 'saritha.modiam@pratian.com', from: 'saritha.modiam@pratian.com',cc: 'lavanya.jami@pratian.com',

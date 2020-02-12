@@ -10,6 +10,7 @@ import {
 } from '@nebular/auth';
 import { PLoginComponent } from './auth/p-login/p-login.component';
 import { PRegisterComponent } from './auth/p-register/p-register.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
     path: 'pages',
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
+      canActivate: [AuthGuardService],
   },
   {
     path: 'login',
@@ -25,7 +27,7 @@ const routes: Routes = [
       path: '',
       component: PLoginComponent,
     }
-    ]
+    ],
   },
   {
     path: 'register',

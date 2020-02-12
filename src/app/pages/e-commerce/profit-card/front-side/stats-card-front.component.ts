@@ -16,55 +16,52 @@ export class StatsCardFrontComponent {
 
   linesData: { firstLine: number[]; secondLine: number[] };
 
-  constructor(private ProfitBarAnimationChartData: ProfitBarAnimationChartData,private ProfitBarAnimationChartService: ProfitBarAnimationChartService ) {
+  constructor(private ProfitBarAnimationChartData: ProfitBarAnimationChartData, private ProfitBarAnimationChartService: ProfitBarAnimationChartService) {
 
-    
-         this.ProfitBarAnimationChartService.getDataForHeartAttackCounter()
-         .pipe(takeWhile(() => this.alive))
-         .subscribe((res)=>
-         {
-          this.linesData=this.getDataForLine(res);
-           
-         
-         });
+
+    this.ProfitBarAnimationChartService.getDataForHeartAttackCounter()
+      .pipe(takeWhile(() => this.alive))
+      .subscribe((res) => {
+        this.linesData = this.getDataForLine(res);
+      });
   }
-  public getDataForLine(HeartAttackCounter: HeartAttackCounter[]): { firstLine: number[]; secondLine: number[] } {  
-  
-    let data = { firstLine, secondLine};
+  public getDataForLine(HeartAttackCounter: HeartAttackCounter[]): { firstLine: number[]; secondLine: number[] } {
+
+    let data = { firstLine, secondLine };
     data.firstLine = [];
     data.secondLine = [];
-    var firstLine: number[]=[];
-    var secondLine: number[]=[];
+    var firstLine: number[] = [];
+    var secondLine: number[] = [];
 
-    for (let i = 0; i < HeartAttackCounter.length; i++) {  
+    for (let i = 0; i < HeartAttackCounter.length; i++) {
 
       firstLine.push(HeartAttackCounter[i].predicted);
       secondLine.push(HeartAttackCounter[i].cured);
     }
     data.firstLine = firstLine;
     data.secondLine = secondLine;
- 
-    return data; 
+
+    return data;
   }
 
-public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]):  number[] {  
-    
-  let firstLinedata: number[] = [];
-  for (let i = 0; i < HeartAttackCounter.length; i++) {    
-    firstLinedata.push(HeartAttackCounter[i].predicted);
+  public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]): number[] {
+
+    let firstLinedata: number[] = [];
+    for (let i = 0; i < HeartAttackCounter.length; i++) {
+      firstLinedata.push(HeartAttackCounter[i].predicted);
+    }
+
+    return firstLinedata;
   }
 
-  return firstLinedata; 
-}
+  private getDataForSecondLine(HeartAttackCounter: HeartAttackCounter[]): number[] {
+    let secondLinedata: number[] = [];
+    for (let i = 0; i < HeartAttackCounter.length; i++) {
 
-private getDataForSecondLine(HeartAttackCounter : HeartAttackCounter[]): number[] {
-  let secondLinedata: number[] = [];
-  for (let i = 0; i < HeartAttackCounter.length; i++) {
-    
-    secondLinedata.push(HeartAttackCounter[i].cured);
+      secondLinedata.push(HeartAttackCounter[i].cured);
+    }
+
+    return secondLinedata;
   }
-
-  return secondLinedata; 
-}   
 
 }

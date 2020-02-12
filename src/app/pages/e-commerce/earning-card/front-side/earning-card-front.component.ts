@@ -43,7 +43,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   }
 
   changeCurrency(currency) {
-    if (this.selectedCurrency !== currency) {
+    if (this.selectedCurrency !== currency) { 
       this.selectedCurrency = currency;
      this. getEarningCardData(currency);  
     }

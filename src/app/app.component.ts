@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
     this.analytics.trackPageViews();
     this.seoService.trackCanonicalChanges();
 
-    window.addEventListener("beforeunload", function (e) {
-      localStorage.setItem('isUserLoggedIn', "false");
-  });
+    // window.addEventListener("beforeunload", function (e) {
+    //   localStorage.setItem('isUserLoggedIn', 'false');
+  // });
   }
 }

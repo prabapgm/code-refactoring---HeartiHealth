@@ -7,14 +7,14 @@ pipeline {
                        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:'https://github.com/saritha1919/Hearti-Health.git']]])
 			              }        
                  }
-                  /*stage('Build') {
+                  stage('Build') {
                             steps { 
                               script{
                                 bat label: '', script: 'npm install'
                                 bat label: '', script: 'npm run ng -- build'
                               }
                             }
-                  }*/
+                  }
                stage('Archiving Artifacts') { 
                          steps{ 
                              archiveArtifacts 'dist/**' 
@@ -31,6 +31,7 @@ pipeline {
                      }
 			             }
 		           }
+             }
     /* post {
         success {
             mail to: 'saritha.modiam@pratian.com', from: 'saritha.modiam@pratian.com',cc: 'lavanya.jami@pratian.com',

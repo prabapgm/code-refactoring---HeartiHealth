@@ -20,7 +20,7 @@ pipeline {
                              archiveArtifacts 'dist/**' 
                          } 
                  } 
-                  stage('Deployment'){
+                  /*stage('Deployment'){
 			             steps{
                      script{
                        //bat label: '', script: 'npm run ng serve'
@@ -30,7 +30,7 @@ pipeline {
                        }
                      }
 			             }
-		           }
+		           }*/
              }
     /* post {
         success {

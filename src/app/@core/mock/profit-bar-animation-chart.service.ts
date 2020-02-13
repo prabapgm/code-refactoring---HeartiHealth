@@ -30,31 +30,6 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
     
   }
 
-  getDataForFirstLine(): number[] {   
-
-    //Write the code to get predicted value from our object
-    let firstLinedata: number[] = [];
-    for (let i = 0; i < this.HeartAttackCounter.length; i++) {
-     //var a= HeartAttackCounter[0].cured;
-      firstLinedata.push(this.HeartAttackCounter[i].predicted);
-    }
-
-    return firstLinedata;
-      
-  }
-
-  getDataForSecondLine(): number[] {
-
-    //Write the code to get predicted value from our object
-    let secondLinedata: number[] = [];
-    for (let i = 0; i < this.HeartAttackCounter.length; i++) {
-      
-      secondLinedata.push(this.HeartAttackCounter[i].cured);
-    }
-
-    return secondLinedata;
-
-  }
 
   createEmptyArray(nPoints: number) {
     return Array.from(Array(nPoints));

@@ -3,21 +3,37 @@ import { of as observableOf,  Observable } from 'rxjs';
 import { PeriodsService } from './periods.service';
 import { TrafficList, TrafficListData } from '../data/traffic-list';
 
+import *  as    TotalPredictionMapperData  from '../../../assets/mock/totalPrediction.json'
+import { TotalPredictionMapper } from '../data/totalPredictionMapper';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment'
+
 @Injectable()
 export class TrafficListService extends TrafficListData {
 
   private getRandom = (roundTo: number) => Math.round(Math.random() * roundTo);
   private data = {};
-
-  constructor(private period: PeriodsService) {
+  
+  constructor(private http: HttpClient,private period: PeriodsService) {
     super();
-    this.data = {
-      week: this.getDataWeek(),
-      month: this.getDataMonth(),
-      year: this.getDataYear(),
-    };
+  
   }
 
+  // constructor(private period: PeriodsService) {
+  //   super();
+  //   this.data = {
+  //     // week: this.getDataWeek(),
+  //     // month: this.getDataMonth(),
+  //     // year: this.getDataYear(),
+  //   };
+  // }
+
+
+  getDataForTodalPrediction(period :string ): Observable<TotalPredictionMapper[]> {
+    //return observableOf((TotalPredictionMapperData as any).default); 
+   return this.http.get<TotalPredictionMapper[]>(`${environment.totalPredictionUrl}${period}ly`);
+      
+    }
   private getDataWeek(): TrafficList[] {
     const getFirstDateInPeriod = () => {
       const weeks = this.period.getWeeks();

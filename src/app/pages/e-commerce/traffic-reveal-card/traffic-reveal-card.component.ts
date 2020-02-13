@@ -2,6 +2,10 @@ import { Component, OnDestroy } from '@angular/core';
 import { TrafficList, TrafficListData } from '../../../@core/data/traffic-list';
 import { TrafficBarData, TrafficBar } from '../../../@core/data/traffic-bar';
 import { takeWhile } from 'rxjs/operators';
+import { TrafficListService } from '../../../@core/mock/traffic-list.service';
+import { TotalPrediction } from '../../../@core/data/totalPrediction'
+import { TotalPredictionMapper } from '../../../@core/data/totalPredictionMapper'
+
 
 @Component({
   selector: 'ngx-traffic-reveal-card',
@@ -13,12 +17,14 @@ export class TrafficRevealCardComponent implements OnDestroy {
   private alive = true;
 
   trafficBarData: TrafficBar;
-  trafficListData: TrafficList;
+  trafficListData: TotalPrediction[]=[];
+//  trafficListData: TrafficList;
   revealed = false;
   period: string = 'week';
 
   constructor(private trafficListService: TrafficListData,
-              private trafficBarService: TrafficBarData) {
+              private trafficBarService: TrafficBarData,
+              private TrafficListDataService : TrafficListService) {
     this.getTrafficFrontCardData(this.period);
     this.getTrafficBackCardData(this.period);
   }
@@ -43,12 +49,69 @@ export class TrafficRevealCardComponent implements OnDestroy {
   }
 
   getTrafficFrontCardData(period: string) {
-    this.trafficListService.getTrafficListData(period)
+    this.TrafficListDataService.getDataForTodalPrediction(period)
       .pipe(takeWhile(() => this.alive))
-      .subscribe(trafficListData => {
-        this.trafficListData = trafficListData;
+      .subscribe(res => {
+        this.trafficListData = this.MapTotalPrediction(res, period);
       });
   }
+
+  MapTotalPrediction(res : TotalPredictionMapper[],period: string) : TotalPrediction[]
+  {  
+   var tdata :TotalPrediction[]=[];
+    for(let i=0;i<res.length;i++)
+    {    
+
+      if(period!='year')
+      {
+        var interval= res[i].interval.slice(0,3);  
+        if(i==0)
+        {
+          var prevDate=res[res.length-1].interval.slice(0,3);     
+          var prevValue=(res[i].totalPrediction*100)/(100+res[i].variation);         
+        }
+           else{
+            var prevDate=res[i-1].interval.slice(0,3);     
+            var prevValue=res[i-1].totalPrediction;   
+           }
+          
+      }
+      else if(period='year')
+      {
+        var interval= res[i].interval;
+        if(i==0)
+        {
+          var prevDate=res[i].interval;
+          var prevValue=res[i].totalPrediction;         
+        }
+           else{
+            var prevDate=res[i-1].interval;
+            var prevValue=res[i-1].totalPrediction;   
+           }
+
+      }
+
+        var a={
+          date: interval,
+          value: res[i].totalPrediction,
+          delta: {
+            up:res[i].up,
+            value: (res[i].variation>=0 ? res[i].variation : (-1)*res[i].variation) 
+          },
+          comparison:{
+            nextDate:interval,
+            nextValue:res[i].totalPrediction,
+            prevDate:prevDate,
+            prevValue:prevValue
+  
+          }
+        }       
+      
+      tdata.push(a);    
+     }
+     return this.trafficListData=tdata;
+  }
+
 
   ngOnDestroy() {
     this.alive = false;

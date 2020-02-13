@@ -1,7 +1,7 @@
 pipeline {
          agent any
                 environment {
-                   FILEPATH = "E:\\Application\\Test\\"
+                   FILEPATH = "E:\\Application\\hearti-health"
                 }
                 stages {
                   stage('Source') {
@@ -9,14 +9,14 @@ pipeline {
                        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:'https://github.com/saritha1919/Hearti-Health.git']]])
 			              }        
                   }
-                  /*stage('Build') {
+                  stage('Build') {
                      steps { 
                         script{
                           bat label: '', script: 'npm install'
                           bat label: '', script: 'npm run ng -- build --prod'
                         }
                      }
-                  }*/
+                  }
                   stage('Archiving Artifacts') { 
                      steps{ 
                        archiveArtifacts 'dist/**' 
@@ -27,7 +27,7 @@ pipeline {
 			             steps{
                      script{
                         dir("${env.FILEPATH}\\Live"){
-                          fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation:"${env.FILEPATH}backup-${env.BUILD_NUMBER}")])
+                          fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation:"${env.FILEPATH}Backup-${env.BUILD_NUMBER}")])
                         }
                         fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "${env.FILEPATH}Live")])
                         dir("${env.FILEPATH}Config"){

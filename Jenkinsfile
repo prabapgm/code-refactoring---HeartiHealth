@@ -26,12 +26,12 @@ pipeline {
                   stage('Deployment'){
 			             steps{
                      script{
-                        dir(${env.FILEPATH}+'Live'){
-                          fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation:${env.FILEPATH} +"backup"+${env.BUILD_NUMBER})])
+                        dir("${env.FILEPATH}\\Live"){
+                          fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation:"${env.FILEPATH}backup-${env.BUILD_NUMBER})])
                         }
-                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: ${env.FILEPATH}+"Live")])
-                        dir(${env.FILEPATH}+'Config'){
-                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: ${env.FILEPATH}+"Live\\dist")])
+                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "${env.FILEPATH}Live")])
+                        dir("${env.FILEPATH}Config"){
+                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "${env.FILEPATH}Live\\dist")])
                         }
                       }
 			             }

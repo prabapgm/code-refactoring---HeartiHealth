@@ -50,15 +50,6 @@ export class StatsCardFrontComponent {
       this.linesData.firstLine.push(HeartAttackCounter[i].predicted);
       this.linesData.secondLine.push(HeartAttackCounter[i].cured);
     }
-<<<<<<< HEAD
-    data.firstLine = firstLine;
-    data.secondLine = secondLine;
-
-    return data;
-  }
-
-  public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]): number[] {
-=======
     
    //this.linesData.firstLine = firstLine;
    //this.linesData.secondLine = secondLine;
@@ -86,7 +77,6 @@ public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]):  number[] 
 
   return firstLinedata; 
 }
->>>>>>> 0619071109476323b9e0fce0ea631da81b19dd71
 
     let firstLinedata: number[] = [];
     for (let i = 0; i < HeartAttackCounter.length; i++) {
@@ -96,21 +86,9 @@ public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]):  number[] 
     return firstLinedata;
   }
 
-<<<<<<< HEAD
-  private getDataForSecondLine(HeartAttackCounter: HeartAttackCounter[]): number[] {
-    let secondLinedata: number[] = [];
-    for (let i = 0; i < HeartAttackCounter.length; i++) {
-
-      secondLinedata.push(HeartAttackCounter[i].cured);
-    }
-
-    return secondLinedata;
-  }
-=======
   return secondLinedata; 
 }   
 */
->>>>>>> 0619071109476323b9e0fce0ea631da81b19dd71
 
 }
 

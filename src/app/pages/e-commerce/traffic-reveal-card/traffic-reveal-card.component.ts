@@ -65,28 +65,30 @@ export class TrafficRevealCardComponent implements OnDestroy {
       if(period!='year')
       {
         var interval= res[i].interval.slice(0,3);  
+        var prevValue=100;
         if(i==0)
         {
           var prevDate=res[res.length-1].interval.slice(0,3);     
-          var prevValue=(res[i].totalPrediction*100)/(100+res[i].variation);         
+         // var prevValue=100;//(res[i].totalPrediction*100)/(100+res[i].variation);         
         }
            else{
             var prevDate=res[i-1].interval.slice(0,3);     
-            var prevValue=res[i-1].totalPrediction;   
+           // var prevValue=res[i-1].totalPrediction;   
            }
           
       }
       else if(period='year')
       {
         var interval= res[i].interval;
+        var prevValue=100;
         if(i==0)
         {
           var prevDate=res[i].interval;
-          var prevValue=res[i].totalPrediction;         
+         // var prevValue=res[i].totalPrediction;         
         }
            else{
             var prevDate=res[i-1].interval;
-            var prevValue=res[i-1].totalPrediction;   
+           // var prevValue=res[i-1].totalPrediction;   
            }
 
       }
@@ -100,7 +102,7 @@ export class TrafficRevealCardComponent implements OnDestroy {
           },
           comparison:{
             nextDate:interval,
-            nextValue:res[i].totalPrediction,
+            nextValue: res[i].variation>=100? prevValue+100 : prevValue+res[i].variation,//res[i].totalPrediction,
             prevDate:prevDate,
             prevValue:prevValue
   

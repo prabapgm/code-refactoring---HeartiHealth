@@ -1,36 +1,40 @@
 pipeline {
          agent any
-             stages {
-	    
-                 stage('Source') {
-                    steps {
+                environment {
+                   FILEPATH = "E:\\Application\\Test\\"
+                }
+                stages {
+                  stage('Source') {
+                     steps {
                        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:'https://github.com/saritha1919/Hearti-Health.git']]])
 			              }        
-                 }
-                  stage('Build') {
-                            steps { 
-                              script{
-                                bat label: '', script: 'npm install'
-                                bat label: '', script: 'npm run ng -- build --prod'
-                              }
-                            }
                   }
-               stage('Archiving Artifacts') { 
-                         steps{ 
-                             archiveArtifacts 'dist/**' 
-                         } 
-                 } 
-                  /*stage('Deployment'){
+                  /*stage('Build') {
+                     steps { 
+                        script{
+                          bat label: '', script: 'npm install'
+                          bat label: '', script: 'npm run ng -- build --prod'
+                        }
+                     }
+                  }*/
+                  stage('Archiving Artifacts') { 
+                     steps{ 
+                       archiveArtifacts 'dist/**' 
+                     } 
+                  } 
+                  stage('Deployment'){
 			             steps{
                      script{
-                       //bat label: '', script: 'npm run ng serve'
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Live")])
-                       dir('E:\\Application\\Test\\Config'){
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "E:\\Application\\Test\\Live\\dist")])
-                       }
-                     }
+                        dir(${env.FILEPATH}+'Live'){
+                          fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation:${env.FILEPATH} +"backup"+${env.BUILD_NUMBER})])
+                        }
+                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: ${env.FILEPATH}+"Live")])
+                        dir(${env.FILEPATH}+'Config'){
+                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: ${env.FILEPATH}+"Live\\dist")])
+                        }
+                      }
 			             }
-		           }*/
+		           }
              }
     /* post {
         success {

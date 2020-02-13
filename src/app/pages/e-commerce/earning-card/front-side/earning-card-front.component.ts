@@ -22,10 +22,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   currencies: string[] = ['Chest Pain', 'Blood Pressure', 'Cholesterol'];
   currentTheme: string;
   predictionLiveUpdateCardData : LivePrediction;
-  liveUpdateChartData : SymptomPredictonMapper[] =[];
- 
-
-  
+  liveUpdateChartData : SymptomPredictonMapper[] =[]; 
 
 
   constructor(private themeService: NbThemeService,
@@ -43,7 +40,7 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
   }
 
   changeCurrency(currency) {
-    if (this.selectedCurrency !== currency) {
+    if (this.selectedCurrency !== currency) { 
       this.selectedCurrency = currency;
      this. getEarningCardData(currency);  
     }

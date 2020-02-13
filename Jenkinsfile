@@ -20,6 +20,7 @@ pipeline {
                   stage('Archiving Artifacts') { 
                      steps{ 
                        archiveArtifacts 'dist/**' 
+                       echo "${env.FILEPATH}"
                      } 
                   } 
                   stage('Deployment'){

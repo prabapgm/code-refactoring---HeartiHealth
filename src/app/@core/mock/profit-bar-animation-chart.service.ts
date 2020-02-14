@@ -23,8 +23,8 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
   }
   
   getDataForHeartAttackCounter(): Observable<HeartAttackCounter[]> {  
-    //return observableOf((HeartAttackPredictor as any).default); 
-    return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);    
+    return observableOf((HeartAttackPredictor as any).default); 
+    //return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);    
   }
 
   getDataForFirstLine(): number[] {   

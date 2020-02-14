@@ -30,8 +30,8 @@ export class StatsCardFrontComponent {
          .pipe(takeWhile(() => this.alive))
          .subscribe((res)=>
          {
-          this.linesData=this.getDataForLine(res);          
-         });         
+          this.linesData=this.getDataForLine(res);   
+         });          
   }
   
   public getDataForLine(HeartAttackCounter: HeartAttackCounter[]) {  
@@ -42,7 +42,7 @@ export class StatsCardFrontComponent {
     var firstLine: number[]=[];
     var secondLine: number[]=[];*/
 
-    for (let i = 0; i < HeartAttackCounter.length; i++) {
+    for (let i = 0; i < HeartAttackCounter.length; i++) {  
 
      // firstLine.push(HeartAttackCounter[i].predicted);
       //secondLine.push(HeartAttackCounter[i].cured);
@@ -56,15 +56,16 @@ export class StatsCardFrontComponent {
    //alert(this.linesData.secondLine +"   :   "+secondLine);
     
 
-   return this.newMethod();
+   //return this.newMethod();
+   return this.linesData; 
       
     //return data; 
   }
 
 
-  private newMethod() {    
-    return this.linesData;    
-  }
+  //private newMethod() {    
+   // return this.linesData;    
+  //}
 
   /*
 public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]):  number[] {  
@@ -78,12 +79,11 @@ public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]):  number[] 
   return firstLinedata; 
 }
 
-    let firstLinedata: number[] = [];
-    for (let i = 0; i < HeartAttackCounter.length; i++) {
-      firstLinedata.push(HeartAttackCounter[i].predicted);
-    }
-
-    return firstLinedata;
+private getDataForSecondLine(HeartAttackCounter : HeartAttackCounter[]): number[] {
+  let secondLinedata: number[] = [];
+  for (let i = 0; i < HeartAttackCounter.length; i++) {
+    
+    secondLinedata.push(HeartAttackCounter[i].cured);
   }
 
   return secondLinedata; 

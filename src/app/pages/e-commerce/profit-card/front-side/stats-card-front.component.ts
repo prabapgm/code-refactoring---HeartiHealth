@@ -3,8 +3,8 @@ import { ProfitBarAnimationChartData } from '../../../../@core/data/profit-bar-a
 import { takeWhile } from 'rxjs/operators';
 import { ProfitBarAnimationChartService } from '../../../../@core/mock/profit-bar-animation-chart.service'
 import { HeartAttackCounter } from '../../../../@core/data/heart-attack-counter';
-import { Observable } from 'rxjs';
-
+import { Observable, from } from 'rxjs';
+ 
 
 @Component({
   selector: 'ngx-stats-card-front',
@@ -12,83 +12,27 @@ import { Observable } from 'rxjs';
   templateUrl: './stats-card-front.component.html',
 })
 export class StatsCardFrontComponent {
-
   private alive = true;
-
-  
-  //linesData: { firstLine: number[]; secondLine: number[] };
 
   linesData: { firstLine: number[]; secondLine: number[] } = {
     firstLine: [],
     secondLine: [],
-  };
-  
-
-  constructor(private ProfitBarAnimationChartData: ProfitBarAnimationChartData,private ProfitBarAnimationChartService: ProfitBarAnimationChartService ) {      
-    
+  }; 
+ 
+  constructor(private ProfitBarAnimationChartData: ProfitBarAnimationChartData,private ProfitBarAnimationChartService: ProfitBarAnimationChartService ) {   
          this.ProfitBarAnimationChartService.getDataForHeartAttackCounter()
          .pipe(takeWhile(() => this.alive))
          .subscribe((res)=>
-         {
-          this.linesData=this.getDataForLine(res);   
-         });          
+         {          
+            this.linesData = this.getDataForLine(res);  
+         });           
   }
   
   public getDataForLine(HeartAttackCounter: HeartAttackCounter[]) {  
-  
-    /*let data = { firstLine, secondLine};
-    data.firstLine = [];
-    data.secondLine = [];
-    var firstLine: number[]=[];
-    var secondLine: number[]=[];*/
-
     for (let i = 0; i < HeartAttackCounter.length; i++) {  
-
-     // firstLine.push(HeartAttackCounter[i].predicted);
-      //secondLine.push(HeartAttackCounter[i].cured);
-
       this.linesData.firstLine.push(HeartAttackCounter[i].predicted);
       this.linesData.secondLine.push(HeartAttackCounter[i].cured);
-    }
-    
-   //this.linesData.firstLine = firstLine;
-   //this.linesData.secondLine = secondLine;
-   //alert(this.linesData.secondLine +"   :   "+secondLine);
-    
-
-   //return this.newMethod();
-   return this.linesData; 
-      
-    //return data; 
+    }    
+   return this.linesData;    
   }
-
-
-  //private newMethod() {    
-   // return this.linesData;    
-  //}
-
-  /*
-public getDataForFirstLine(HeartAttackCounter: HeartAttackCounter[]):  number[] {  
-    
-  let firstLinedata: number[] = [];
-  for (let i = 0; i < HeartAttackCounter.length; i++) {    
-    firstLinedata.push(HeartAttackCounter[i].predicted);
-  }
-
-
-  return firstLinedata; 
 }
-
-private getDataForSecondLine(HeartAttackCounter : HeartAttackCounter[]): number[] {
-  let secondLinedata: number[] = [];
-  for (let i = 0; i < HeartAttackCounter.length; i++) {
-    
-    secondLinedata.push(HeartAttackCounter[i].cured);
-  }
-
-  return secondLinedata; 
-}   
-*/
-
-}
-

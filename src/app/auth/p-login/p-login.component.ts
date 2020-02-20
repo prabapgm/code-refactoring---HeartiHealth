@@ -9,6 +9,7 @@ import { NbToastrService } from '@nebular/theme';
   templateUrl: './p-login.component.html',
   styleUrls: ['./p-login.component.scss']
 })
+
 export class PLoginComponent implements OnInit {
   items;
   checkoutForm;
@@ -34,6 +35,7 @@ export class PLoginComponent implements OnInit {
         this.toastrService.show('Please enter correct username or password', 'Error!', { status: 'danger' });
       }
     });
+    
 
     // stop here if form is invalid
     // if (this.checkoutForm.invalid) {

@@ -84,6 +84,7 @@ export class TrafficRevealCardComponent implements OnDestroy {
         if(i==0)
         {
           var prevDate=res[i].interval;
+         // prevValue=0;
          // var prevValue=res[i].totalPrediction;         
         }
            else{
@@ -102,9 +103,9 @@ export class TrafficRevealCardComponent implements OnDestroy {
           },
           comparison:{
             nextDate:interval,
-            nextValue: res[i].variation>=100? prevValue+100 : prevValue+res[i].variation,//res[i].totalPrediction,
+            nextValue: res[i].variation>=100?((prevValue+100 )/2): prevValue+res[i].variation,//res[i].totalPrediction,
             prevDate:prevDate,
-            prevValue:prevValue
+            prevValue: res[i].variation>=100?(prevValue/2): prevValue
   
           }
         }       

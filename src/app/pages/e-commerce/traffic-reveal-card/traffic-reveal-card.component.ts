@@ -59,16 +59,23 @@ export class TrafficRevealCardComponent implements OnDestroy {
   MapTotalPrediction(res : TotalPredictionMapper[],period: string) : TotalPrediction[]
   {  
    var tdata :TotalPrediction[]=[];
-    for(let i=0;i<res.length;i++)
-    {    
+    for(let i=res.length-1;i>=0;i--)
+    {  
+      
+    
 
       if(period!='year')
       {
         var interval= res[i].interval.slice(0,3);  
         var prevValue=100;
+        if (i==0 && period=='month' && res.length==13)
+        {
+          break;
+        }
         if(i==0)
         {
-          var prevDate=res[res.length-1].interval.slice(0,3);     
+          var prevDate=res[res.length-1].interval.slice(0,3);   
+        
          // var prevValue=100;//(res[i].totalPrediction*100)/(100+res[i].variation);         
         }
            else{
@@ -103,15 +110,18 @@ export class TrafficRevealCardComponent implements OnDestroy {
           },
           comparison:{
             nextDate:interval,
-            nextValue: res[i].variation>=100?((prevValue+100 )/2): prevValue+res[i].variation,//res[i].totalPrediction,
+            nextValue: res[i].variation>=50?((prevValue+100 )/2): prevValue+res[i].variation,//res[i].totalPrediction,
             prevDate:prevDate,
-            prevValue: res[i].variation>=100?(prevValue/2): prevValue
+            prevValue: res[i].variation>=50?(prevValue/2): prevValue
   
           }
-        }       
+        }     
+        
       
-      tdata.push(a);    
+      tdata.push(a);  
+      
      }
+    
      return this.trafficListData=tdata;
   }
 

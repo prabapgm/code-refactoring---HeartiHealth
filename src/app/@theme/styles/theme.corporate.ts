@@ -89,7 +89,7 @@ export const CORPORATE_THEME = {
       tooltipBg: baseThemeVariables.bg,
       tooltipBorderColor: baseThemeVariables.border2,
       tooltipBorderWidth: '1',
-      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px; margin-top:20px;',
     },
 
     trafficBarEchart: {

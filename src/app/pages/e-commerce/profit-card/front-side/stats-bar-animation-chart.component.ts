@@ -52,9 +52,9 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
       ],
       grid: {
         left: 0,
-        top: 0,
+        top: 31,
         right: 0,
-        bottom: 0,
+        bottom: 2,
       },
       legend: {
         data: ['predicted', 'cured'],
@@ -62,6 +62,7 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
         borderRadius: 0,
         itemWidth: 15,
         itemHeight: 15,
+        top:0,        
         textStyle: {
           color: chartVariables.textColor,
         },

@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
 export class AuthServiceService {
 
   authURL = 'http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api/User/';
+  
 
   constructor(private httpClient: HttpClient, private apiService: ApiService, private router: Router) { }
 
   userData: any;
 
-  login(userData){
-    return this.apiService.get(this.authURL + userData.email);
+  login(userData){     
+    return this.apiService.get(this.authURL + userData.email);          
   }
 
   register(userData){

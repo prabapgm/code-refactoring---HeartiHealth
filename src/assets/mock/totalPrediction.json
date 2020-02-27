@@ -1,57 +1,50 @@
 [ 
     {
-        "ageBelowThirty": true, 
-        "male": true, 
+       
         "interval": "Mon" ,
-        "totalPrediction":100,
+        "totalPrediction":2,
         "variation": 10,
         "up" : true
     } ,
     {
-        "ageBelowThirty": true, 
-        "male": true, 
-        "interval": "Tues" ,
-        "totalPrediction":100,
+       
+        "interval": "Tue" ,
+        "totalPrediction":2,
         "variation": 10,
-        "up" : true
+        "up" : false
     } ,
     {
-        "ageBelowThirty": true, 
-        "male": true, 
+       
         "interval": "Wed" ,
-        "totalPrediction":100,
+        "totalPrediction":2,
         "variation": 10,
         "up" : true
     },
     {
-        "ageBelowThirty": true, 
-        "male": true, 
-        "interval": "Thurs" ,
-        "totalPrediction":100,
+       
+        "interval": "Thu" ,
+        "totalPrediction":2,
         "variation": 10,
         "up" : true
     },
     {
-        "ageBelowThirty": true, 
-        "male": true, 
+       
         "interval": "Fri" ,
-        "totalPrediction":100,
+        "totalPrediction":2,
         "variation": 10,
         "up" : true
     },
     {
-        "ageBelowThirty": true, 
-        "male": true, 
+       
         "interval": "Sat" ,
-        "totalPrediction":100,
+        "totalPrediction":2,
         "variation": 10,
         "up" : true
     },
     {
-        "ageBelowThirty": true, 
-        "male": true, 
+       
         "interval": "Sun" ,
-        "totalPrediction":100,
+        "totalPrediction":2,
         "variation": 10,
         "up" : true
     }

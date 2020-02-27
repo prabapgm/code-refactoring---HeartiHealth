@@ -1,45 +1,42 @@
 pipeline {
          agent any
-             stages {
-	    
-                 stage('Source') {
-                    steps {
-                       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:'https://github.com/saritha1919/Hearti-Health.git']]])
+                environment {
+                   FILEPATH = "E:\\Application\\hearti-health"
+                }
+                stages {
+                  stage('Source') {
+                     steps {
+                       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:'https://github.com/Birunthadevi/Hearti-Health']]])
 			              }        
-                 }
-                  /*stage('Build') {
-                            steps { 
-                              script{
-                                bat label: '', script: 'npm install'
-                                bat label: '', script: 'npm run ng -- build'
-                              }
-                            }
-                  }*/
-               stage('Archiving Artifacts') { 
-                         steps{ 
-                             archiveArtifacts 'dist/**' 
-                         } 
-                 } 
+                  }
+                  stage('Build') {
+                     steps { 
+                        script{
+                          bat label: '', script: 'npm install'
+                          bat label: '', script: 'npm run ng -- build --prod'
+                        }
+                     }
+                  }
+                  stage('Archiving Artifacts') { 
+                     steps{ 
+                       archiveArtifacts 'dist/**' 
+                       echo "${env.FILEPATH}"
+                     } 
+                  } 
                   stage('Deployment'){
 			             steps{
                      script{
-                       //bat label: '', script: 'npm run ng serve'
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "E:\\Application\\Test\\Live")])
-                       dir('E:\\Application\\Test\\Config'){
-                       fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "E:\\Application\\Test\\Live\\dist")])
-                       }
-                     }
+                        dir("${env.FILEPATH}\\Live"){
+                          fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation:"${env.FILEPATH}\\Backup-${env.BUILD_NUMBER}")])
+                        }
+                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "dist\\**", targetLocation: "${env.FILEPATH}\\Live")])
+                        dir("${env.FILEPATH}\\Config"){
+                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: "\\**", targetLocation: "${env.FILEPATH}\\Live\\dist")])
+                        }
+                      }
 			             }
 		           }
-               stage('RestartApp')
-               {
-                 steps{
-                   script{
-                     bat "RestartWebsite.bat"
-                   }
-                 }
-               }
-           }
+             }
     /* post {
         success {
             mail to: 'saritha.modiam@pratian.com', from: 'saritha.modiam@pratian.com',cc: 'lavanya.jami@pratian.com',

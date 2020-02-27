@@ -16,50 +16,32 @@ export class ProfitBarAnimationChartService extends ProfitBarAnimationChartData 
 
   constructor(private http: HttpClient) {
     super();
-   
+
+    
   }
+
+
   ngOnInit() {
    
   }
   
   getDataForHeartAttackCounter(): Observable<HeartAttackCounter[]> {  
-    //return observableOf((HeartAttackPredictor as any).default); 
-    return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);    
+    return observableOf((HeartAttackPredictor as any).default); 
+    //return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl);    
   }
 
-  getDataForFirstLine(): number[] {   
+  // async getDataForHeartAttackCounter(): Promise<HeartAttackCounter[]> {  
+  //   //return observableOf((HeartAttackPredictor as any).default);    
+  //   return await this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl).toPromise<HeartAttackCounter[]>();        
+  // }
 
-    //Write the code to get predicted value from our object
-    let firstLinedata: number[] = [];
-    for (let i = 0; i < this.HeartAttackCounter.length; i++) {
-     //var a= HeartAttackCounter[0].cured;
-      firstLinedata.push(this.HeartAttackCounter[i].predicted);
-    }
-
-
-    return firstLinedata;
-      
-  }
-
-  getDataForSecondLine(): number[] {
-
-    //Write the code to get predicted value from our object
-    let secondLinedata: number[] = [];
-    for (let i = 0; i < this.HeartAttackCounter.length; i++) {
-      
-      secondLinedata.push(this.HeartAttackCounter[i].cured);
-    }
-
-    return secondLinedata;
-
-  }
+ 
 
   createEmptyArray(nPoints: number) {
     return Array.from(Array(nPoints));
   }
 
-  getChartData(): Observable<{ firstLine: number[]; secondLine: number[]; }> {   
-   
+  getChartData(): Observable<{ firstLine: number[]; secondLine: number[]; }> {  
     return observableOf(this.data);
   }
 }

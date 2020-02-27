@@ -28,7 +28,7 @@ export class EarningService  implements OnInit{
   GetLiveRecords():Observable<LivePrediction[]>
   {
  //return observableOf((LivePredictions as any).default);
-  
+  // var a= this.http.get<LivePrediction[]>(environment.livePredictionUrl);
   return this.http.get<LivePrediction[]>(environment.livePredictionUrl);
   }
 

@@ -48,10 +48,7 @@ export class HealthPredictorComponent implements OnInit {
         this.isHeartOK = !!response.Result;
         }
     });
-
-    this.checkoutForm.reset();
-   
-    
+    //this.checkoutForm.reset();
   }
 
   // convenience getter for easy access to form fields

@@ -62,13 +62,14 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
 
    private mapSymptomPredictionMapper(symptomPredictions :symptomPrediction[])
    {
-
+   var tdata:SymptomPredictonMapper[]=[];
     for(let i=0;i<symptomPredictions.length;i++)
-     {     
-     this.liveUpdateChartData.push({value: [symptomPredictions[i].timeStamp,
+     {   
+         
+    tdata.push({value: [symptomPredictions[i].timeStamp,
       symptomPredictions[i].symptomValue]});  
     }
-  
+  this.liveUpdateChartData=tdata;
   }
 
   startReceivingLiveData(currency) {

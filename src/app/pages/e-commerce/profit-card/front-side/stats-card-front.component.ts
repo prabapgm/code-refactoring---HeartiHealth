@@ -8,9 +8,9 @@ import { Observable, from } from 'rxjs';
 import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
-  selector: 'ngx-stats-card-front',
-  styleUrls: ['./stats-card-front.component.scss'],
-  templateUrl: './stats-card-front.component.html',
+  selector: "ngx-stats-card-front",
+  styleUrls: ["./stats-card-front.component.scss"],
+  templateUrl: "./stats-card-front.component.html"
 })
 export class StatsCardFrontComponent {
   private alive = true;

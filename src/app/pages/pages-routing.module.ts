@@ -7,7 +7,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { HealthPredictorComponent } from './health-predictor/health-predictor.component';
 import { HealthPredictorResultComponent } from './health-predictor-result/health-predictor-result.component';
-
+import{ ProfitCardResolverService } from './../profit-card-resolver.service';
 
 
 const routes: Routes = [{
@@ -17,6 +17,7 @@ const routes: Routes = [{
     {
       path: 'dashboard',
       component: ECommerceComponent,
+      resolve: { dashboard : ProfitCardResolverService}
     },
     {
       path: 'iot-dashboard',
@@ -95,6 +96,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [ProfitCardResolverService]
 })
 export class PagesRoutingModule {
 }

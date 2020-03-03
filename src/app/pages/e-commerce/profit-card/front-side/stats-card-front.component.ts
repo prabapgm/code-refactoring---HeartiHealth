@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ProfitBarAnimationChartData } from '../../../../@core/data/profit-bar-animation-chart';
 import { takeWhile } from 'rxjs/operators';
 import { ProfitBarAnimationChartService } from '../../../../@core/mock/profit-bar-animation-chart.service'
 import { HeartAttackCounter } from '../../../../@core/data/heart-attack-counter';
 import { Observable, from } from 'rxjs';
- 
+
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'ngx-stats-card-front',
@@ -14,25 +15,20 @@ import { Observable, from } from 'rxjs';
 export class StatsCardFrontComponent {
   private alive = true;
 
-  linesData: { firstLine: number[]; secondLine: number[] } = {
+  public linesData: { firstLine: number[]; secondLine: number[] } = {
     firstLine: [],
     secondLine: [],
   }; 
- 
-  constructor(private ProfitBarAnimationChartData: ProfitBarAnimationChartData,private ProfitBarAnimationChartService: ProfitBarAnimationChartService ) {   
-         this.ProfitBarAnimationChartService.getDataForHeartAttackCounter()
-         .pipe(takeWhile(() => this.alive))
-         .subscribe((res)=>
-         {          
-            this.linesData = this.getDataForLine(res);  
-         });           
-  }
+
+  public dashboard :any;
   
-  public getDataForLine(HeartAttackCounter: HeartAttackCounter[]) {  
-    for (let i = 0; i < HeartAttackCounter.length; i++) {  
-      this.linesData.firstLine.push(HeartAttackCounter[i].predicted);
-      this.linesData.secondLine.push(HeartAttackCounter[i].cured);
-    }    
-   return this.linesData;    
+  ngOnInit():void{
+    this.dashboard = this.route.snapshot.data['dashboard'];
+    for (let i = 0; i < +this.dashboard.length; i++) {  
+      this.linesData.firstLine.push(this.dashboard[i].predicted);
+      this.linesData.secondLine.push(this.dashboard[i].cured);
+    } 
   }
+
+  constructor(private route: ActivatedRoute) {} 
 }

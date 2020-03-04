@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../../@core/utils/layout.service';
+import { StatsCardFrontComponent } from './stats-card-front.component';
 
 @Component({
   selector: 'ngx-stats-bar-animation-chart',
@@ -26,7 +27,8 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
   options: any = {};
 
   constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
+              private layoutService: LayoutService,
+              private StatsCardFrontComponent: StatsCardFrontComponent) {
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),
@@ -51,10 +53,10 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
         chartVariables.secondAnimationBarColor,
       ],
       grid: {
-        left: 0,
+        left: 30,
         top: 31,
         right: 0,
-        bottom: 2,
+        bottom: 25,
       },
       legend: {
         data: ['predicted', 'cured'],
@@ -85,29 +87,37 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
       },
       xAxis: [
         {
-          data: this.linesData.firstLine.map((_, index) => index),
-          silent: false,
+          data: this.linesData.firstLine.map((_, index) => this.StatsCardFrontComponent.week[index]),
+          silent: true,
           axisLine: {
-            show: false,
+            show: true, 
+            lineStyle: {
+              color: chartVariables.textColor,
+            },                     
           },
           axisLabel: {
-            show: false,
+            show: true, 
+            color: chartVariables.textColor,           
           },
           axisTick: {
-            show: false,
+            show: true,
           },
         },
       ],
       yAxis: [
         {
           axisLine: {
-            show: false,
+            show: true,
+            lineStyle: {
+              color: chartVariables.textColor,
+            },
           },
           axisLabel: {
-            show: false,
+            show: true,
+            color: chartVariables.textColor,   
           },
           axisTick: {
-            show: false,
+            show: true,
           },
           splitLine: {
             show: true,

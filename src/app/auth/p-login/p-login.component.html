@@ -22,15 +22,18 @@
 
             <div class="form-group">
                 <label for="email" class="label" id="emailLabel">Email </label>
-                <input type="text" nbInput fullWidth placeholder="Email" formControlName="email" id="inputEmail">
+                <input [class.redborder]='submitted && email.invalid' type="text" nbInput fullWidth placeholder="Email" formControlName="email" id="inputEmail">
+                <div *ngIf="submitted && email.invalid && email.errors.required" class="alert-danger"><span class='ml-2'>* Enter the Email</span></div>
+                <div *ngIf="submitted && email.invalid && email.errors.email" class="alert-danger"><span class='ml-2'>* Enter the Valid Email</span></div> 
             </div>
 
             <div class="form-group">
                 <label for="password" class="label" id="passwordLabel">Password</label>
-                <input type="password" nbInput fullWidth placeholder="Password" formControlName="password" id="inputPassword">
+                <input  [class.redborder]='submitted && password.invalid' type="password" nbInput fullWidth placeholder="Password" formControlName="password" id="inputPassword">
+                <div *ngIf="password.invalid && submitted" class="alert-danger"><span class='ml-2'>* Enter the Password</span></div> 
             </div>
 
-            <button nbButton size="medium" shape="semi-round" style="display: block; margin:auto;" id="loginBtn">Login</button>
+            <button  nbButton size="medium" shape="semi-round" style="display: block; margin:auto;" id="loginBtn">Login</button>
         </form>
 
         <div class="register-btn-contain" style="margin-top: 10px;">

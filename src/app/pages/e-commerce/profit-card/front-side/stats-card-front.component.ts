@@ -5,6 +5,8 @@ import { HeartAttackCounter } from '../../../../@core/data/heart-attack-counter'
 import { Observable, from } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router'; 
+import { ProfitBarAnimationChartService } from '../../../../@core/mock/profit-bar-animation-chart.service' 
+
 
 @Component({
   selector: "ngx-stats-card-front",
@@ -31,26 +33,27 @@ export class StatsCardFrontComponent {
   
   ngOnInit(): void {
     this.dashboard = this.route.snapshot.data['dashboard'];
-<<<<<<< HEAD
+
     //    this.Week_cnt = this.curr.getDate();
     this.Week_cnt = this.curr.getDay()-1;
     //this.week = this.days;
     for (let i = 0; i <= this.dashboard.length; i++) {
-=======
+
     //this.Week_cnt = this.curr.getDate();      
 
     for (let i = 0; i <= this.dashboard.length; i++) {  
->>>>>>> d416447d7ef87ee18b891f38d80acbc9a3f40173
+
       this.linesData.firstLine.push(this.dashboard[i].predicted);
       this.linesData.secondLine.push(this.dashboard[i].cured);
       //get x-axis day data
       this.getDay_data.push(this.dashboard[i].interval);
       
       //get current day
-      //this.week[i] = this.days[this.Week_cnt];  
-      //this.Week_cnt++;
-      //(this.Week_cnt == 7) ?  this.Week_cnt = 0 : "";     
+      this.week[i] = this.days[this.Week_cnt];  
+      this.Week_cnt++;
+      (this.Week_cnt == 7) ?  this.Week_cnt = 0 : "";     
     }    
   }
+}
   constructor(private route: ActivatedRoute) {} 
 }

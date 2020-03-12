@@ -87,7 +87,8 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
       },
       xAxis: [
         {
-          data: this.linesData.firstLine.map((_, index) => this.StatsCardFrontComponent.week[index]),
+          //data: this.linesData.firstLine.map((_, index) => this.StatsCardFrontComponent.week[index]),
+          data: this.linesData.firstLine.map((_, index) => this.StatsCardFrontComponent.getDay_data[index].slice(0, 3)),
           silent: true,
           axisLine: {
             show: true, 

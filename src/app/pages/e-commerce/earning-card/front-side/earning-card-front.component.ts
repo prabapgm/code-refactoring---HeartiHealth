@@ -61,11 +61,11 @@ export class EarningCardFrontComponent implements OnDestroy, OnInit {
 
   }
 
-   private mapSymptomPredictionMapper(symptomPredictions : symptomPrediction[]){
-   const tdata: SymptomPredictonMapper[] = [];
-    for (let i = 0; i < symptomPredictions.length; i++)
+   private mapSymptomPredictionMapper(symptomPredictions :symptomPrediction[])
+   {
+   var tdata:SymptomPredictonMapper[]=[];
+    for(let i = 0; i < symptomPredictions.length;i++)
      {
-
     tdata.push({value: [symptomPredictions[i].timeStamp,
       symptomPredictions[i].symptomValue]});
     }

@@ -5,8 +5,6 @@ import { HeartAttackCounter } from '../../../../@core/data/heart-attack-counter'
 import { Observable, from } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router'; 
-import { ProfitBarAnimationChartService } from '../../../../@core/mock/profit-bar-animation-chart.service' 
-
 
 @Component({
   selector: "ngx-stats-card-front",
@@ -16,13 +14,7 @@ import { ProfitBarAnimationChartService } from '../../../../@core/mock/profit-ba
 export class StatsCardFrontComponent {
   private alive = true;
 
-  private curr = new Date ;
-  private days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  public week = [];
-  //public week = [10,20,30,40,50,60,70];
-  private Week_cnt = 0;
-
-  public linesData: { firstLine: number[]; secondLine: number[] } = {
+   public linesData: { firstLine: number[]; secondLine: number[] } = {
     firstLine: [],
     secondLine: [],
   }; 
@@ -31,29 +23,15 @@ export class StatsCardFrontComponent {
 
   public dashboard :any;
   
-  ngOnInit(): void {
-    this.dashboard = this.route.snapshot.data['dashboard'];
-
-    //    this.Week_cnt = this.curr.getDate();
-    this.Week_cnt = this.curr.getDay()-1;
-    //this.week = this.days;
-    for (let i = 0; i <= this.dashboard.length; i++) {
-
-    //this.Week_cnt = this.curr.getDate();      
+  ngOnInit():void{
+    this.dashboard = this.route.snapshot.data['dashboard'];   
 
     for (let i = 0; i <= this.dashboard.length; i++) {  
-
       this.linesData.firstLine.push(this.dashboard[i].predicted);
       this.linesData.secondLine.push(this.dashboard[i].cured);
       //get x-axis day data
-      this.getDay_data.push(this.dashboard[i].interval);
-      
-      //get current day
-      this.week[i] = this.days[this.Week_cnt];  
-      this.Week_cnt++;
-      (this.Week_cnt == 7) ?  this.Week_cnt = 0 : "";     
+      this.getDay_data.push(this.dashboard[i].interval);        
     }    
   }
-}
   constructor(private route: ActivatedRoute) {} 
 }

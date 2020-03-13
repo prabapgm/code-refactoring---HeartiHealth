@@ -12,8 +12,7 @@ export class AuthServiceService {
   
 
   constructor(private httpClient: HttpClient, private apiService: ApiService, private router: Router) { }
-
-  userData: any;
+  userData: any = {};
 
   login(userData){     
     return this.apiService.get(this.authURL + userData.email);          
@@ -25,6 +24,7 @@ export class AuthServiceService {
 
   logout(){
     localStorage.setItem('isUserLoggedIn', 'false');
+    localStorage.removeItem('username');
     this.router.navigateByUrl('/login');
     return true;
 

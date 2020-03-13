@@ -31,6 +31,8 @@ export class PLoginComponent implements OnInit {
     }
     this.authService.login(this.checkoutForm.value).subscribe((response: any) => {
       if (response.password === this.checkoutForm.value.password) {
+        this.authService.userData = response;
+        localStorage.setItem('username', response.userName);
         this.router.navigateByUrl('/pages');
         localStorage.setItem('isUserLoggedIn', 'true');
       }else{

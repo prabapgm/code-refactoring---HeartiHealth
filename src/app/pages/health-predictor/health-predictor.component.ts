@@ -29,10 +29,10 @@ export class HealthPredictorComponent implements OnInit {
       restecg: ['',''],
       thalach: ['', Validators.required],
       exang: ['',''],
-      oldpeak: ['', Validators.required],
-      slope: ['', Validators.required],
-      ca: ['', Validators.required],
-      thal: ['', Validators.required],
+      oldpeak: ['', [Validators.required, Validators.pattern('([1-9]|10)')]],
+      slope: ['', [Validators.required, Validators.pattern('[0-1]')]],
+      ca: ['', [Validators.required, Validators.pattern('([1-9]|10)')]],
+      thal: ['', [Validators.required, Validators.pattern('[3]|[6]|[7]')]],
     });
   }
 

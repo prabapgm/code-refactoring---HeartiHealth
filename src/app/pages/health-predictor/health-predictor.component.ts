@@ -10,25 +10,25 @@ import { NbDialogService } from '@nebular/theme';
 })
 export class HealthPredictorComponent implements OnInit {
   items;
-  checkoutForm; 
+  checkoutForm;
   submitted = false;
   isHeartOK: Boolean;
 
 
-  @ViewChild('dialog', {static: false}) resultDialog;
+  @ViewChild('dialog', { static: false }) resultDialog;
 
   constructor(private dialogService: NbDialogService, private formBuilder: FormBuilder,
-     private healthPredictor: HealthPredictorService) {
+    private healthPredictor: HealthPredictorService) {
     this.checkoutForm = this.formBuilder.group({
       age: ['', Validators.required],
-      sex: ['', Validators.required],
-      cp: ['', Validators.required],
+      sex: ['', ''],
+      cp: ['',''],
       trestbps: ['', Validators.required],
       chol: ['', Validators.required],
       fbs: ['', Validators.required],
-      restecg: ['', Validators.required],
+      restecg: ['',''],
       thalach: ['', Validators.required],
-      exang: ['', Validators.required],
+      exang: ['',''],
       oldpeak: ['', Validators.required],
       slope: ['', Validators.required],
       ca: ['', Validators.required],
@@ -36,17 +36,28 @@ export class HealthPredictorComponent implements OnInit {
     });
   }
 
+  // numberOnly(event): boolean {
+  //   const charCode = (event.which) ? event.which : event.keyCode;
+  //   if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+  //     return false;
+  //   }
+  //   return true;
+
+  // }
+
   ngOnInit() {
   }
 
   onSubmit() {
     this.submitted = true;
-
-     this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {      
+    if (this.checkoutForm.invalid) {      
+      return;
+    }
+    this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {
       if (response.Status === 200) {
         this.dialogService.open(this.resultDialog, { hasScroll: true });
         this.isHeartOK = !!response.Result;
-        }
+      }
     });
     //this.checkoutForm.reset();
   }

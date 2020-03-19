@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HealthPredictorService } from '../../services/health-predictor/health-predictor.service';
-import { NbDialogService } from '@nebular/theme';
+import { NbDialogService, NbToastrService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-health-predictor',
@@ -10,56 +10,49 @@ import { NbDialogService } from '@nebular/theme';
 })
 export class HealthPredictorComponent implements OnInit {
   items;
-  checkoutForm;
+  checkoutForm; 
   submitted = false;
   isHeartOK: Boolean;
 
 
-  @ViewChild('dialog', { static: false }) resultDialog;
+  @ViewChild('dialog', {static: false}) resultDialog;
 
   constructor(private dialogService: NbDialogService, private formBuilder: FormBuilder,
-    private healthPredictor: HealthPredictorService) {
+     private healthPredictor: HealthPredictorService, private toastrService: NbToastrService) {
     this.checkoutForm = this.formBuilder.group({
       age: ['', Validators.required],
-      sex: ['', ''],
-      cp: ['',''],
+      sex: ['', Validators.required],
+      cp: ['', Validators.required],
       trestbps: ['', Validators.required],
       chol: ['', Validators.required],
       fbs: ['', Validators.required],
-      restecg: ['',''],
+      restecg: ['', Validators.required],
       thalach: ['', Validators.required],
-      exang: ['',''],
-      oldpeak: ['', [Validators.required, Validators.pattern('([1-9]|10)')]],
+      exang: ['', Validators.required],
+      oldpeak: ['', [Validators.required, Validators.pattern('([0-9]|10)')]],
       slope: ['', [Validators.required, Validators.pattern('[0-1]')]],
       ca: ['', [Validators.required, Validators.pattern('([1-9]|10)')]],
-      thal: ['', [Validators.required, Validators.pattern('[3]|[6]|[7]')]],
+      thal: ['', [Validators.required, Validators.pattern('(3|7|6)')]],
     });
   }
-
-  // numberOnly(event): boolean {
-  //   const charCode = (event.which) ? event.which : event.keyCode;
-  //   if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-  //     return false;
-  //   }
-  //   return true;
-
-  // }
 
   ngOnInit() {
   }
 
   onSubmit() {
     this.submitted = true;
-    if (this.checkoutForm.invalid) {      
+    if (this.checkoutForm.invalid) {
       return;
     }
-    this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {
+     this.healthPredictor.getHeartPredictorResult(this.checkoutForm.value).subscribe((response: any) => {
       if (response.Status === 200) {
         this.dialogService.open(this.resultDialog, { hasScroll: true });
         this.isHeartOK = !!response.Result;
-      }
-    });
-    //this.checkoutForm.reset();
+        this.checkoutForm.reset();
+        this.submitted = false;
+        }
+    }, error => { 
+      this.toastrService.show('Some Error occurred please try after sometime', 'Error!', { status: 'danger' }); });
   }
 
   // convenience getter for easy access to form fields

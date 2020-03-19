@@ -38,7 +38,7 @@
             <input id="ageInput" type="number" min="1" max="100" nbInput fullWidth required placeholder="Eg: 32" formControlName="age" [ngClass]="{ 'border-red': submitted && f.age.errors }">
 
             <div *ngIf="submitted && f.age.invalid">
-              <div *ngIf="f.age.errors.required" class="text-red">Age is required</div>
+              <div *ngIf="f.age.errors.required" class="text-red">* Required</div>
             </div>
           </div>
         </div>
@@ -46,30 +46,26 @@
         <div class="col-lg-3">
           <div class="form-group">
             <label id="genderLabel" for="sex" class="label block-label">Gender</label>
-            <nb-radio-group formControlName="f.sex.value" id="genderRadio" [ngClass]="{ 'border-red': submitted && f.sex.errors }">
-              <nb-radio id="maleRadio" [value]="male">Male</nb-radio>
-              <nb-radio id="femaleRadio" [value]="female">Female</nb-radio>
+            <nb-radio-group formControlName="sex" name="sex" id="genderRadio" [ngClass]="{ 'border-red': submitted && f.sex.errors }">
+              <nb-radio id="maleRadio" [value]="1">Male</nb-radio>
+              <nb-radio id="femaleRadio" [value]="0">Female</nb-radio>
             </nb-radio-group>
             <div *ngIf="submitted && f.sex.invalid">
-              <div *ngIf="f.sex.errors.required" class="text-red">Gender is required</div>
+              <div *ngIf="f.sex.errors.required" class="text-red">* Required</div>
             </div>      
-            <pre>{{sex}}</pre>
-            <pre>{{f.sex.value}}</pre>
           </div>
         </div>
 
         <div class="col-lg-3">
           <div class="form-group">
             <label id="chestPainLabel" for="f.cp.value" class="label block-label">Do you experience Chest Pain?</label>
-            <nb-radio-group name="cp" id="chestPainRadio" [ngClass]="{ 'border-red': submitted && f.cp.errors }">
-              <nb-radio id="chestPainYesRadio"  [value]="yes">Yes</nb-radio>
-              <nb-radio id="chestPainNoRadio" [checked]="true" [value]="no">No</nb-radio>
+            <nb-radio-group formControlName="cp" name="cp" id="chestPainRadio" [ngClass]="{ 'border-red': submitted && f.cp.errors }">
+              <nb-radio id="chestPainYesRadio"  [value]="1">Yes</nb-radio>
+              <nb-radio id="chestPainNoRadio"   [value]="0">No</nb-radio>
             </nb-radio-group>
             <div *ngIf="submitted && f.cp.invalid">
-              <div *ngIf="f.cp.errors.required" class="text-red">'Do you experience Chest Pain' is required</div>
+              <div *ngIf="f.cp.errors.required" class="text-red">* Required</div>
             </div>      
-            <pre>{{cp}}</pre>  
-            <pre>{{f.cp.value}}</pre>  
           </div>
         </div>
 
@@ -81,7 +77,7 @@
             </label>
             <input id="bloddPressureInput" type="text" nbInput required fullWidth placeholder="Eg: 120" class="is-invalid" formControlName="trestbps" [ngClass]="{ 'border-red': submitted && f.trestbps.errors }">
             <div *ngIf="submitted && f.trestbps.invalid">
-              <div *ngIf="f.trestbps.errors.required" class="text-red">'Blood Pressure Level' is required</div>
+              <div *ngIf="f.trestbps.errors.required" class="text-red">* Required</div>
             </div>
           </div>
         </div>
@@ -96,7 +92,7 @@
             </label>
             <input id="cholesterolInput" type="text" nbInput fullWidth placeholder="Eg: 150" formControlName="chol" [ngClass]="{ 'border-red': submitted && f.chol.errors }">
             <div *ngIf="submitted && f.chol.invalid">
-                <div *ngIf="f.chol.errors.required" class="text-red">'Cholesterol Level' is required</div>
+                <div *ngIf="f.chol.errors.required" class="text-red">* Required</div>
               </div>
           </div>
         </div>
@@ -109,7 +105,7 @@
             </label>
             <input id="fastingBloodSugarInput" type="text" nbInput fullWidth placeholder="Eg: 120" formControlName="fbs" [ngClass]="{ 'border-red': submitted && f.fbs.errors }">
             <div *ngIf="submitted && f.fbs.invalid">
-                <div *ngIf="f.fbs.errors.required" class="text-red">'Fasting Blood Sugar Level' is required</div>
+                <div *ngIf="f.fbs.errors.required" class="text-red">* Required</div>
               </div>
           </div>
         </div>
@@ -120,12 +116,12 @@
               Resting Electrocardiographic
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <nb-radio-group name="restecg" id="restECGRadio" [ngClass]="{ 'border-red': submitted && f.restecg.errors }">
+            <nb-radio-group formControlName="restecg" name="restecg" id="restECGRadio" [ngClass]="{ 'border-red': submitted && f.restecg.errors }">
               <nb-radio id="restECGPositiveRadio" [value]="1">Positive</nb-radio>
               <nb-radio id="restECGNegativeRadio" [checked]="true" [value]="0">Negative</nb-radio>
             </nb-radio-group>
             <div *ngIf="submitted && f.restecg.invalid">
-                <div *ngIf="f.restecg.errors.required" class="text-red">'Resting Electrocardiographic ' is required</div>
+                <div *ngIf="f.restecg.errors.required" class="text-red">* Required</div>
               </div>
           </div>
         </div>
@@ -139,7 +135,7 @@
             </label>
             <input id="heartRateInput" type="text" nbInput fullWidth placeholder="Eg: 150" formControlName="thalach" [ngClass]="{ 'border-red': submitted && f.thalach.errors }">
             <div *ngIf="submitted && f.thalach.invalid">
-                <div *ngIf="f.thalach.errors.required" class="text-red">'Maximum Heart Rate Achieved' is required</div>
+                <div *ngIf="f.thalach.errors.required" class="text-red">* Required</div>
               </div>
           </div>
         </div>
@@ -153,12 +149,12 @@
               Excercise includes Angina
               <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
-            <nb-radio-group name="exang" id="anginaRadio" [ngClass]="{ 'border-red': submitted && f.exang.errors }">
-              <nb-radio id="anginaYesRadio" [value]="yes">Yes</nb-radio>
-              <nb-radio id="anginaNoRadio" [checked]="true" [value]="no">No</nb-radio>
+            <nb-radio-group formControlName="exang" name="exang" id="anginaRadio" [ngClass]="{ 'border-red': submitted && f.exang.errors }">
+              <nb-radio id="anginaYesRadio" [value]="1">Yes</nb-radio>
+              <nb-radio id="anginaNoRadio" [checked]="true" [value]="0">No</nb-radio>
             </nb-radio-group>
             <div *ngIf="submitted && f.exang.invalid">
-                <div *ngIf="f.exang.errors.required" class="text-red">'Excercise includes Angina' is required</div>
+                <div *ngIf="f.exang.errors.required" class="text-red">* Required</div>
               </div>
           </div>
         </div>
@@ -171,8 +167,9 @@
             </label>
             <input id="depressionInput" type="text" nbInput fullWidth placeholder="0 - 10" formControlName="oldpeak" [ngClass]="{ 'border-red': submitted && f.oldpeak.errors }">
             <div *ngIf="submitted && f.oldpeak.invalid">
-                <div *ngIf="f.oldpeak.errors.required" class="text-red">'Depression induced by exercise' is required</div>
-              </div>
+                <div *ngIf="f.oldpeak.errors.required" class="text-red">* Required</div>
+                <div *ngIf="f.oldpeak.errors.pattern" class="text-red">* Input should be between 0 to 10</div>
+            </div>
           </div>
         </div>
 
@@ -184,7 +181,8 @@
             </label>
             <input id="peakExerciseInput" type="text" nbInput fullWidth placeholder="0 - 1" formControlName="slope" [ngClass]="{ 'border-red': submitted && f.slope.errors }">
             <div *ngIf="submitted && f.slope.invalid">
-                <div *ngIf="f.slope.errors.required" class="text-red">'Slope of the peak exercise' is required</div>
+                <div *ngIf="f.slope.errors.required" class="text-red">* Required</div>
+                <div *ngIf="f.slope.errors.pattern" class="text-red">* Input should be either 0 or 1</div>
               </div>
           </div>
         </div>
@@ -197,7 +195,8 @@
             </label>
             <input id="fluoroscopyInput" type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca" [ngClass]="{ 'border-red': submitted && f.ca.errors }">
             <div *ngIf="submitted && f.ca.invalid">
-                <div *ngIf="f.ca.errors.required" class="text-red">'Vessels colored by Flouoroscopy' is required</div>
+                <div *ngIf="f.ca.errors.required" class="text-red">* Required</div>
+                <div *ngIf="f.ca.errors.pattern" class="text-red">* Input should be between 0 to 10</div>
               </div>
           </div>
         </div>
@@ -213,7 +212,8 @@
             <input id="thalassemiaInput" type="text" nbInput fullWidth placeholder="3=normal 6=fixed defect 7=reversible defect"
               formControlName="thal" [ngClass]="{ 'border-red': submitted && f.thal.errors }">
               <div *ngIf="submitted && f.thal.invalid">
-                  <div *ngIf="f.thal.errors.required" class="text-red">'Thalassemia Level' is required</div>
+                  <div *ngIf="f.thal.errors.required" class="text-red">* Required</div>
+                  <div *ngIf="f.thal.errors.pattern" class="text-red">* Input should be 3 or 6 or 7</div>
                 </div>
           </div>
         </div>

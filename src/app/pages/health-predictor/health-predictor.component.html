@@ -17,7 +17,7 @@
 </style>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-  <nb-card>
+  <nb-card [nbSpinner]="loading" nbSpinnerStatus="success" nbSpinnerSize="giant">
     <nb-card-header>
       <div>
         <div>

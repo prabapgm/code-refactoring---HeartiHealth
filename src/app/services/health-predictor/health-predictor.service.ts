@@ -14,7 +14,11 @@ export class HealthPredictorService {
 
   getHeartPredictorResult(data) {
     return of({Result: 1, Status: 200});
-    //return this.httpClient.post('http://15.206.14.87:5000/predict', data);
+
+    // return this.httpClient.post('http://3.6.13.167:5000/predict/', data);
+
+    
+    //return this.httpClient.post('http://localhost:52648/predict/', data);
   }
 
 }

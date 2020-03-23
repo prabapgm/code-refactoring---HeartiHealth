@@ -35,7 +35,7 @@
             <label for="age" class="label" id="ageLabel" >
               Age              
             </label>
-            <input id="ageInput" type="number" min="1" max="100" nbInput fullWidth required placeholder="Eg: 32" formControlName="age" [ngClass]="{ 'border-red': submitted && f.age.errors }">
+            <input id="ageInput" type="number" nbInput fullWidth required placeholder="Eg: 32" formControlName="age" [ngClass]="{ 'border-red': submitted && f.age.errors }">
 
             <div *ngIf="submitted && f.age.invalid">
               <div *ngIf="f.age.errors.required" class="text-red">Age is required</div>
@@ -46,15 +46,14 @@
         <div class="col-lg-3">
           <div class="form-group">
             <label id="genderLabel" for="sex" class="label block-label">Gender</label>
-            <nb-radio-group formControlName="f.sex.value" id="genderRadio" [ngClass]="{ 'border-red': submitted && f.sex.errors }">
+            <nb-radio-group name="sex" id="genderRadio" [ngClass]="{ 'border-red': submitted && f.sex.errors }">
               <nb-radio id="maleRadio" [value]="male">Male</nb-radio>
               <nb-radio id="femaleRadio" [value]="female">Female</nb-radio>
             </nb-radio-group>
             <div *ngIf="submitted && f.sex.invalid">
               <div *ngIf="f.sex.errors.required" class="text-red">Gender is required</div>
             </div>      
-            <pre>{{sex}}</pre>
-            <pre>{{f.sex.value}}</pre>
+            
           </div>
         </div>
 
@@ -77,7 +76,7 @@
           <div class="form-group">
             <label id="bloodPressureLabel" for="trestbps" class="label">
               Blood Pressure Level
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="Blood pressure is one of the vital signs, along with respiratory rate, heart rate, oxygen saturation, and body temperature. Can be measured in mmHg" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="bloddPressureInput" type="text" nbInput required fullWidth placeholder="Eg: 120" class="is-invalid" formControlName="trestbps" [ngClass]="{ 'border-red': submitted && f.trestbps.errors }">
             <div *ngIf="submitted && f.trestbps.invalid">
@@ -92,7 +91,7 @@
           <div class="form-group">
             <label id="cholesterolLabel" for="chol" class="label">
               Cholesterol Level
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="Cholesterol is a waxy substance found in blood. body needs cholesterol to build healthy cells, but high levels of cholesterol can increase risk of heart disease. With high cholesterol, can develop fatty deposits in blood vessels and it can be measured in mg/dL" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="cholesterolInput" type="text" nbInput fullWidth placeholder="Eg: 150" formControlName="chol" [ngClass]="{ 'border-red': submitted && f.chol.errors }">
             <div *ngIf="submitted && f.chol.invalid">
@@ -105,7 +104,7 @@
           <div class="form-group">
             <label for="fbs" class="label" id="fastingBloodSugarLabel">
               Fasting Blood Sugar Level
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="A test to determine how much glucose (sugar) is in a blood sample after an overnight fast. For example, 100 mg/dl" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="fastingBloodSugarInput" type="text" nbInput fullWidth placeholder="Eg: 120" formControlName="fbs" [ngClass]="{ 'border-red': submitted && f.fbs.errors }">
             <div *ngIf="submitted && f.fbs.invalid">
@@ -118,7 +117,7 @@
           <div class="form-group">
             <label for="" class="label block-label" id="restECGLabel">
               Resting Electrocardiographic
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="The resting electrocardiogram is a test that measures the electrical activity of the heart." nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <nb-radio-group name="restecg" id="restECGRadio" [ngClass]="{ 'border-red': submitted && f.restecg.errors }">
               <nb-radio id="restECGPositiveRadio" [value]="1">Positive</nb-radio>
@@ -135,7 +134,7 @@
           <div class="form-group">
             <label for="" class="label" id="heartRateLabel">
               Maximum Heart Rate Achieved
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="MHR refers to the fastest rate at which your heart will beat in one minute. Formula, 206.9 - (0.67 x age)" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="heartRateInput" type="text" nbInput fullWidth placeholder="Eg: 150" formControlName="thalach" [ngClass]="{ 'border-red': submitted && f.thalach.errors }">
             <div *ngIf="submitted && f.thalach.invalid">
@@ -150,8 +149,8 @@
         <div class="col-lg-3">
           <div class="form-group">
             <label id="anginaLabel" for="exang" class="label block-label">
-              Excercise includes Angina
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              Exercise includes Angina
+              <span class="badge badge-pill badge-secondary" nbTooltip="Upper-body exercises may precipitate angina more readily than lower-body exercises because of a higher press or response." nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <nb-radio-group name="exang" id="anginaRadio" [ngClass]="{ 'border-red': submitted && f.exang.errors }">
               <nb-radio id="anginaYesRadio" [value]="yes">Yes</nb-radio>
@@ -167,7 +166,7 @@
           <div class="form-group">
             <label id="depressionLabel" for="oldpeak" class="label">
               Depression induced by exercise
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="Depression manifests physically by causing disturbed sleep, reduced energy, appetite changes, body aches, and increased pain perception, all of which can result in less motivation to exercise." nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="depressionInput" type="text" nbInput fullWidth placeholder="0 - 10" formControlName="oldpeak" [ngClass]="{ 'border-red': submitted && f.oldpeak.errors }">
             <div *ngIf="submitted && f.oldpeak.invalid">
@@ -180,7 +179,7 @@
           <div class="form-group">
             <label id="peakExerciseLabel" for="slope" class="label">
               Slope of the peak exercise
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="Slope of the peak exercise" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="peakExerciseInput" type="text" nbInput fullWidth placeholder="0 - 1" formControlName="slope" [ngClass]="{ 'border-red': submitted && f.slope.errors }">
             <div *ngIf="submitted && f.slope.invalid">
@@ -193,7 +192,7 @@
           <div class="form-group">
             <label id="fluoroscopyLabel" for="ca" class="label">
               Vessels colored by Flouoroscopy
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="Angiography or arteriography is a medical imaging technique used to visualize the inside, or lumen, of blood vessels and organs of the body, with particular interest in the arteries, veins, and the heart chambers. This is traditionally done by injecting a radio-opaque contrast agent into the blood vessel and imaging using X-ray based techniques such as fluoroscopy." nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="fluoroscopyInput" type="text" nbInput fullWidth placeholder="0 - 10" formControlName="ca" [ngClass]="{ 'border-red': submitted && f.ca.errors }">
             <div *ngIf="submitted && f.ca.invalid">
@@ -208,7 +207,7 @@
           <div class="form-group">
             <label id="thalassemiaLabel" for="thal" class="label">
               Thalassemia Level
-              <span class="badge badge-pill badge-secondary" nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">i</span>
+              <span class="badge badge-pill badge-secondary" nbTooltip="Thalassemia is an inherited blood disorder in which the body makes an abnormal form of hemoglobin results in excessive destruction of red blood cells" nbTooltipStatus="primary" nbButton status="primary">i</span>
             </label>
             <input id="thalassemiaInput" type="text" nbInput fullWidth placeholder="3=normal 6=fixed defect 7=reversible defect"
               formControlName="thal" [ngClass]="{ 'border-red': submitted && f.thal.errors }">

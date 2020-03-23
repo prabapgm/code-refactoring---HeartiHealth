@@ -46,23 +46,13 @@
         <div class="col-lg-3">
           <div class="form-group">
             <label id="genderLabel" for="sex" class="label block-label">Gender</label>
-<<<<<<< HEAD
-            <nb-radio-group name="sex" id="genderRadio" [ngClass]="{ 'border-red': submitted && f.sex.errors }">
-              <nb-radio id="maleRadio" [value]="male">Male</nb-radio>
-              <nb-radio id="femaleRadio" [value]="female">Female</nb-radio>
-=======
             <nb-radio-group formControlName="sex" name="sex" id="genderRadio" [ngClass]="{ 'border-red': submitted && f.sex.errors }">
               <nb-radio id="maleRadio" [value]="1">Male</nb-radio>
               <nb-radio id="femaleRadio" [value]="0">Female</nb-radio>
->>>>>>> f24507dc3ace458f64e00f4305d7759896cc20e6
             </nb-radio-group>
             <div *ngIf="submitted && f.sex.invalid">
               <div *ngIf="f.sex.errors.required" class="text-red">* Required</div>
             </div>      
-<<<<<<< HEAD
-            
-=======
->>>>>>> f24507dc3ace458f64e00f4305d7759896cc20e6
           </div>
         </div>
 

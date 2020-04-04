@@ -12,7 +12,7 @@ export class AuthServiceService {
   //authURL = 'http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api/User/';
 
 
-  authURL = 'http://ec2-52-201-229-245.compute-1.amazonaws.com:3000/api/User/';
+   authURL = 'http://172.30.11.193:3000/api/User/';
   
 
   constructor(private httpClient: HttpClient, private apiService: ApiService, private router: Router) { }
@@ -20,8 +20,8 @@ export class AuthServiceService {
   userData: any;
 
   login(userData){     
-    // return this.apiService.get(this.authURL + userData.email);          
-    return of({email:'testuser@example.com',password:'12345'});          
+     return this.apiService.get(this.authURL + userData.email);          
+    //return of({email:'testuser@example.com',password:'12345'});          
   }
 
 

@@ -15,7 +15,7 @@ export class ProfitCardResolverService {
   constructor(private http: HttpClient) { }
 
   resolve(): Observable<HeartAttackCounter[]> { 
-      //return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl); 
-      return observableOf((HeartAttackPredictor as any).default);  
+      return this.http.get<HeartAttackCounter[]>(environment.heartiAttackCounterUrl); 
+      //return observableOf((HeartAttackPredictor as any).default);  
   } 
 }

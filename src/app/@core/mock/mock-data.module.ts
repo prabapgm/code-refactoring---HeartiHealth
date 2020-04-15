@@ -5,12 +5,12 @@ import { UserService } from './users.service';
 import { ElectricityService } from './electricity.service';
 import { SmartTableService } from './smart-table.service';
  
-import { OrdersChartService } from './orders-chart.service';
-import { ProfitChartService } from './profit-chart.service';
+
+
 import { TrafficListService } from './traffic-list.service';
 import { PeriodsService } from './periods.service';
 import { EarningService } from './earning.service';
-import { OrdersProfitChartService } from './orders-profit-chart.service';
+
 import { TrafficBarService } from './traffic-bar.service';
 import { ProfitBarAnimationChartService } from './profit-bar-animation-chart.service';
 import { TemperatureHumidityService } from './temperature-humidity.service';
@@ -27,12 +27,12 @@ const SERVICES = [
   ElectricityService,
   SmartTableService,
   
-  OrdersChartService,
-  ProfitChartService,
+  
+ 
   TrafficListService,
   PeriodsService,
   EarningService,
-  OrdersProfitChartService,
+ 
   TrafficBarService,
   ProfitBarAnimationChartService,
   TemperatureHumidityService,

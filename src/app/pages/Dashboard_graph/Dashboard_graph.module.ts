@@ -14,12 +14,12 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { Dashboard_graphComponent } from './Dashboard_graph.component';
-import { ProfitCardComponent } from './profit-card/profit-card.component';
+import { HeartAttacksCured_WeeklyComponent } from './HeartAttacksCured_Weekly/HeartAttacksCured_Weekly.component';
 
 import { ChartModule } from 'angular2-chartjs';
 
-import { StatsBarAnimationChartComponent } from './profit-card/stats-bar-animation-chart.component';
-import { StatsCardFrontComponent } from './profit-card/stats-card-front.component';
+import { StatsBarAnimationChartComponent } from './HeartAttacksCured_Weekly/stats-bar-animation-chart.component';
+import { HeartAttacksCured_WeeklyFrontComponent } from './HeartAttacksCured_Weekly/HeartAttacksCured_Weekly-front.component';
 import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
 import { TrafficBarComponent } from './traffic-reveal-card/front-side/traffic-bar/traffic-bar.component';
 import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
@@ -52,10 +52,10 @@ import { TodaysPredictionLiveUpdateChartComponent } from './TodaysPrediction/Tod
   ],
   declarations: [
     Dashboard_graphComponent,
-    StatsCardFrontComponent,
+    HeartAttacksCured_WeeklyFrontComponent,
     
     StatsBarAnimationChartComponent,
-    ProfitCardComponent,
+    HeartAttacksCured_WeeklyComponent,
      
    
     TrafficRevealCardComponent,

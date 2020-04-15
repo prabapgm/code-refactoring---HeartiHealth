@@ -9,11 +9,11 @@ import { ProfitBarAnimationChartService } from '../../../@core/mock/profit-bar-a
 
 
 @Component({
-  selector: "ngx-stats-card-front",
-  styleUrls: ["./stats-card-front.component.scss"],
-  templateUrl: "./stats-card-front.component.html"
+  selector: "ngx-HeartAttacksCured_Weekly-front",
+  styleUrls: ["./HeartAttacksCured_Weekly-front.component.scss"],
+  templateUrl: "./HeartAttacksCured_Weekly-front.component.html"
 })
-export class StatsCardFrontComponent {
+export class HeartAttacksCured_WeeklyFrontComponent {
   private alive = true;
   
   public linesData: { firstLine: number[]; secondLine: number[] } = {

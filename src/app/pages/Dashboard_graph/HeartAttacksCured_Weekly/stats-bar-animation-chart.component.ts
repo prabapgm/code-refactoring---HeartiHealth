@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../@core/utils/layout.service';
-import { StatsCardFrontComponent } from './stats-card-front.component';
+import { HeartAttacksCured_WeeklyFrontComponent } from './HeartAttacksCured_Weekly-front.component';
 
 @Component({
   selector: 'ngx-stats-bar-animation-chart',
@@ -28,7 +28,7 @@ export class StatsBarAnimationChartComponent implements AfterViewInit, OnDestroy
 
   constructor(private theme: NbThemeService,
               private layoutService: LayoutService,
-              private StatsCardFrontComponent: StatsCardFrontComponent) {
+              private StatsCardFrontComponent: HeartAttacksCured_WeeklyFrontComponent) {
     this.layoutService.onChangeLayoutSize()
       .pipe(
         takeWhile(() => this.alive),

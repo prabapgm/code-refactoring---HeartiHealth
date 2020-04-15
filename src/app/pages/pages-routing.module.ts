@@ -7,7 +7,7 @@ import { Dashboard_graphComponent } from './Dashboard_graph/Dashboard_graph.comp
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { HealthPredictorComponent } from './health-predictor/health-predictor.component';
 import { HealthPredictorResultComponent } from './health-predictor-result/health-predictor-result.component';
-import{ ProfitCardResolverService } from './../profit-card-resolver.service';
+import{ ProfitCardResolverService } from './../HeartAttacksCured_Weekly-resolver.service';
 
 
 const routes: Routes = [{

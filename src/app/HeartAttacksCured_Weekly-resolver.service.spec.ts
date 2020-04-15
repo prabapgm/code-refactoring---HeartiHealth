@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProfitCardResolverService } from './profit-card-resolver.service';
+import { ProfitCardResolverService } from './HeartAttacksCured_Weekly-resolver.service';
 
 describe('ProfitCardResolverService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

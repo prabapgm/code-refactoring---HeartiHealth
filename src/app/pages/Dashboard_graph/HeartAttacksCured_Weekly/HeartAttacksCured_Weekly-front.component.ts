@@ -1,5 +1,4 @@
-import { Component,OnInit } from '@angular/core';
-import { ProfitBarAnimationChartData } from '../../../@core/data/profit-bar-animation-chart';
+import { Component,OnInit } from '@angular/core'; 
 import { takeWhile } from 'rxjs/operators'; 
 import { HeartAttackCounter } from '../../../@core/data/heart-attack-counter';
 import { Observable, from } from 'rxjs';

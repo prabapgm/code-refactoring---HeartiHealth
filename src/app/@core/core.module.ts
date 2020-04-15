@@ -22,7 +22,7 @@ import { TrafficListData } from './data/traffic-list';
 import { EarningData } from './data/earning';
 
 import { TrafficBarData } from './data/traffic-bar';
-import { ProfitBarAnimationChartData } from './data/profit-bar-animation-chart';
+ 
 
 import { SolarData } from './data/solar';
 import { TrafficChartData } from './data/traffic-chart';

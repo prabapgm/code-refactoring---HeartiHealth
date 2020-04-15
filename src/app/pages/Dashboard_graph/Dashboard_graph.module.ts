@@ -20,10 +20,10 @@ import { ChartModule } from 'angular2-chartjs';
 
 import { StatsBarAnimationChartComponent } from './HeartAttacksCured_Weekly/stats-bar-animation-chart.component';
 import { HeartAttacksCured_WeeklyFrontComponent } from './HeartAttacksCured_Weekly/HeartAttacksCured_Weekly-front.component';
-import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
-import { TrafficBarComponent } from './traffic-reveal-card/front-side/traffic-bar/traffic-bar.component';
-import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
-import { TrafficCardsHeaderComponent } from './traffic-reveal-card/traffic-cards-header/traffic-cards-header.component';
+import { TotalPrediction_CalenderRevealCardComponent } from './TotalPrediction_Calender-card/TotalPrediction_Calender-reveal-card.component';
+import { TotalPrediction_CalenderBarComponent } from './TotalPrediction_Calender-card/front-side/TotalPrediction_Calender-bar/TotalPrediction_Calender-bar.component';
+import { TotalPrediction_CalenderFrontCardComponent } from './TotalPrediction_Calender-card/front-side/TotalPrediction_Calender-front-card.component';
+import { TotalPrediction_CalenderHeaderComponent } from './TotalPrediction_Calender-card/TotalPrediction_Calender-header/TotalPrediction_Calender-header.component';
 
   
  
@@ -58,12 +58,12 @@ import { TodaysPredictionLiveUpdateChartComponent } from './TodaysPrediction/Tod
     HeartAttacksCured_WeeklyComponent,
      
    
-    TrafficRevealCardComponent,
+    TotalPrediction_CalenderRevealCardComponent,
 
-    TrafficFrontCardComponent,
+    TotalPrediction_CalenderFrontCardComponent,
     
-    TrafficBarComponent,
-    TrafficCardsHeaderComponent,
+    TotalPrediction_CalenderBarComponent,
+    TotalPrediction_CalenderHeaderComponent,
     
     
     

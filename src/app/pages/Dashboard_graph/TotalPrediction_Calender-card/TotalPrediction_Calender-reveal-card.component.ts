@@ -8,11 +8,11 @@ import { TotalPredictionMapper } from '../../../@core/data/totalPredictionMapper
 
 
 @Component({
-  selector: 'ngx-traffic-reveal-card',
-  styleUrls: ['./traffic-reveal-card.component.scss'],
-  templateUrl: './traffic-reveal-card.component.html',
+  selector: 'ngx-TotalPrediction_Calender-reveal-card',
+  styleUrls: ['./TotalPrediction_Calender-reveal-card.component.scss'],
+  templateUrl: './TotalPrediction_Calender-reveal-card.component.html',
 })
-export class TrafficRevealCardComponent implements OnDestroy {
+export class TotalPrediction_CalenderRevealCardComponent implements OnDestroy {
 
   private alive = true;
 

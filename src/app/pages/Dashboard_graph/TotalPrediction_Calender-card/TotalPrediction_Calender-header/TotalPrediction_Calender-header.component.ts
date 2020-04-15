@@ -3,11 +3,11 @@ import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
-  selector: 'ngx-traffic-cards-header',
-  styleUrls: ['./traffic-cards-header.component.scss'],
-  templateUrl: './traffic-cards-header.component.html',
+  selector: 'ngx-TotalPrediction_Calender-header',
+  styleUrls: ['./TotalPrediction_Calender-header.component.scss'],
+  templateUrl: './TotalPrediction_Calender-header.component.html',
 })
-export class TrafficCardsHeaderComponent implements OnDestroy {
+export class TotalPrediction_CalenderHeaderComponent implements OnDestroy {
   private alive = true;
 
   @Output() periodChange = new EventEmitter<string>();

@@ -6,7 +6,7 @@
       <nb-icon [icon]="item.delta.up ? 'arrow-up' : 'arrow-down'" pack="eva"></nb-icon>
       {{ item.delta.value }}%
     </span>
-    <ngx-traffic-bar [barData]="item.comparison" [successDelta]="item.delta.up">
-    </ngx-traffic-bar>
+    <ngx-TotalPrediction_Calender-bar [barData]="item.comparison" [successDelta]="item.delta.up">
+    </ngx-TotalPrediction_Calender-bar>
   </nb-list-item>
 </nb-list>

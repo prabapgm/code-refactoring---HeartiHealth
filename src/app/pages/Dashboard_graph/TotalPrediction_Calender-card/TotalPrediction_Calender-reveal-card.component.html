@@ -1,0 +1,11 @@
+<nb-reveal-card [showToggleButton]="false" [revealed]="revealed">
+  <nb-card-front>
+    <nb-card size="small">
+      
+      <ngx-TotalPrediction_Calender-header [type]="period" (periodChange)="setPeriodAngGetData($event)"> </ngx-TotalPrediction_Calender-header>
+      
+      <ngx-TotalPrediction_Calender-front-card [frontCardData]="trafficListData"></ngx-TotalPrediction_Calender-front-card>      
+   
+    </nb-card>
+  </nb-card-front>  
+</nb-reveal-card>

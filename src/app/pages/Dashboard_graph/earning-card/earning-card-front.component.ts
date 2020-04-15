@@ -2,11 +2,11 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { interval , Subscription } from 'rxjs';
 import { switchMap, takeWhile } from 'rxjs/operators';
-import { LiveUpdateChart, EarningData } from '../../../../@core/data/earning';
-import { LivePrediction } from '../../../../@core/data/live-prediction';
-import { symptomPrediction } from '../../../../@core/data/symptomPrediction';
-import { SymptomPredictonMapper } from '../../../../@core/data/symptomPredictionMapper';
-import { EarningService } from '../../../../@core/mock/earning.service';
+import { LiveUpdateChart, EarningData } from '../../../@core/data/earning';
+import { LivePrediction } from '../../../@core/data/live-prediction';
+import { symptomPrediction } from '../../../@core/data/symptomPrediction';
+import { SymptomPredictonMapper } from '../../../@core/data/symptomPredictionMapper';
+import { EarningService } from '../../../@core/mock/earning.service';
 
 @Component({
   selector: 'ngx-earning-card-front',

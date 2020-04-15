@@ -1,11 +1,11 @@
 import { Component,OnInit } from '@angular/core';
-import { ProfitBarAnimationChartData } from '../../../../@core/data/profit-bar-animation-chart';
+import { ProfitBarAnimationChartData } from '../../../@core/data/profit-bar-animation-chart';
 import { takeWhile } from 'rxjs/operators'; 
-import { HeartAttackCounter } from '../../../../@core/data/heart-attack-counter';
+import { HeartAttackCounter } from '../../../@core/data/heart-attack-counter';
 import { Observable, from } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router'; 
-import { ProfitBarAnimationChartService } from '../../../../@core/mock/profit-bar-animation-chart.service' 
+import { ProfitBarAnimationChartService } from '../../../@core/mock/profit-bar-animation-chart.service' 
 
 
 @Component({

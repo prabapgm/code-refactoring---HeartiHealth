@@ -18,8 +18,8 @@ import { ProfitCardComponent } from './profit-card/profit-card.component';
 
 import { ChartModule } from 'angular2-chartjs';
 
-import { StatsBarAnimationChartComponent } from './profit-card/front-side/stats-bar-animation-chart.component';
-import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
+import { StatsBarAnimationChartComponent } from './profit-card/stats-bar-animation-chart.component';
+import { StatsCardFrontComponent } from './profit-card/stats-card-front.component';
 import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
 import { TrafficBarComponent } from './traffic-reveal-card/front-side/traffic-bar/traffic-bar.component';
 import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
@@ -31,8 +31,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
  
 import { EarningCardComponent } from './earning-card/earning-card.component';
 
-import { EarningCardFrontComponent } from './earning-card/front-side/earning-card-front.component';
-import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earning-live-update-chart.component';
+import { EarningCardFrontComponent } from './earning-card/earning-card-front.component';
+import { EarningLiveUpdateChartComponent } from './earning-card/earning-live-update-chart.component';
 
 @NgModule({
   imports: [

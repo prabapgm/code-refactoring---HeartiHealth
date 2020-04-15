@@ -1,9 +1,9 @@
 import { delay, takeWhile } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
-import { LayoutService } from '../../../../@core/utils/layout.service';
-import { symptomPrediction } from '../../../../@core/data/symptomPrediction';
-import { SymptomPredictonMapper } from '../../../../@core/data/symptomPredictionMapper';
+import { LayoutService } from '../../../@core/utils/layout.service';
+import { symptomPrediction } from '../../../@core/data/symptomPrediction';
+import { SymptomPredictonMapper } from '../../../@core/data/symptomPredictionMapper';
 
 @Component({
   selector: 'ngx-earning-live-update-chart',

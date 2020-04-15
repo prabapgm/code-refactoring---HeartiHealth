@@ -17,23 +17,20 @@ import { ECommerceComponent } from './e-commerce.component';
 import { ProfitCardComponent } from './profit-card/profit-card.component';
 
 import { ChartModule } from 'angular2-chartjs';
-import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
-import { StatsAreaChartComponent } from './profit-card/back-side/stats-area-chart.component';
+
 import { StatsBarAnimationChartComponent } from './profit-card/front-side/stats-bar-animation-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
 import { TrafficRevealCardComponent } from './traffic-reveal-card/traffic-reveal-card.component';
 import { TrafficBarComponent } from './traffic-reveal-card/front-side/traffic-bar/traffic-bar.component';
 import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
 import { TrafficCardsHeaderComponent } from './traffic-reveal-card/traffic-cards-header/traffic-cards-header.component';
-import { TrafficBackCardComponent } from './traffic-reveal-card/back-side/traffic-back-card.component';
-import { TrafficBarChartComponent } from './traffic-reveal-card/back-side/traffic-bar-chart.component';
+
   
  
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
  
 import { EarningCardComponent } from './earning-card/earning-card.component';
-import { EarningCardBackComponent } from './earning-card/back-side/earning-card-back.component';
-import { EarningPieChartComponent } from './earning-card/back-side/earning-pie-chart.component';
+
 import { EarningCardFrontComponent } from './earning-card/front-side/earning-card-front.component';
 import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earning-live-update-chart.component';
 
@@ -56,15 +53,15 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
   declarations: [
     ECommerceComponent,
     StatsCardFrontComponent,
-    StatsAreaChartComponent,
+    
     StatsBarAnimationChartComponent,
     ProfitCardComponent,
      
-    StatsCardBackComponent,
+   
     TrafficRevealCardComponent,
-    TrafficBarChartComponent,
+
     TrafficFrontCardComponent,
-    TrafficBackCardComponent,
+    
     TrafficBarComponent,
     TrafficCardsHeaderComponent,
     
@@ -73,8 +70,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
      
     EarningCardComponent,
     EarningCardFrontComponent,
-    EarningCardBackComponent,
-    EarningPieChartComponent,
+    
     EarningLiveUpdateChartComponent,
   ],
   providers: [

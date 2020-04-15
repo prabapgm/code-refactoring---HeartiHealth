@@ -20,7 +20,7 @@ import { StatsBarService } from './stats-bar.service';
  
 import { StatsProgressBarService } from './stats-progress-bar.service';
  
-import { SecurityCamerasService } from './security-cameras.service';
+
 
 const SERVICES = [
   UserService,
@@ -42,7 +42,7 @@ const SERVICES = [
   
   StatsProgressBarService,
   
-  SecurityCamerasService,
+  
 ];
 
 @NgModule({

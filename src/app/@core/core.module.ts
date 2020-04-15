@@ -30,7 +30,7 @@ import { StatsBarData } from './data/stats-bar';
  
 import { StatsProgressBarData } from './data/stats-progress-bar';
  
-import { SecurityCamerasData } from './data/security-cameras';
+
 
 import { UserService } from './mock/users.service';
 import { ElectricityService } from './mock/electricity.service';
@@ -50,7 +50,7 @@ import { StatsBarService } from './mock/stats-bar.service';
  
 import { StatsProgressBarService } from './mock/stats-progress-bar.service';
  
-import { SecurityCamerasService } from './mock/security-cameras.service';
+
 import { MockDataModule } from './mock/mock-data.module';
 
 const socialLinks = [
@@ -90,7 +90,7 @@ const DATA_SERVICES = [
   
   { provide: StatsProgressBarData, useClass: StatsProgressBarService },
   
-  { provide: SecurityCamerasData, useClass: SecurityCamerasService },
+  
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {

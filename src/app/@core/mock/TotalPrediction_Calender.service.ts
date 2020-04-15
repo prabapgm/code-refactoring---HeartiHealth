@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment'
 
 @Injectable()
-export class TrafficListService extends TrafficListData {
+export class  TotalPrediction_CalenderService extends TrafficListData {
 
   private getRandom = (roundTo: number) => Math.round(Math.random() * roundTo);
   private data = {};

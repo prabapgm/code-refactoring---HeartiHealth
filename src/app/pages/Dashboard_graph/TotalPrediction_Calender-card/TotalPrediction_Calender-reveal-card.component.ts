@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { TrafficList, TrafficListData } from '../../../@core/data/traffic-list';
 import { TrafficBarData, TrafficBar } from '../../../@core/data/traffic-bar';
 import { takeWhile } from 'rxjs/operators';
-import { TrafficListService } from '../../../@core/mock/traffic-list.service';
+import {  TotalPrediction_CalenderService } from '../../../@core/mock/TotalPrediction_Calender.service';
 import { TotalPrediction } from '../../../@core/data/totalPrediction'
 import { TotalPredictionMapper } from '../../../@core/data/totalPredictionMapper'
 
@@ -22,9 +22,9 @@ export class TotalPrediction_CalenderRevealCardComponent implements OnDestroy {
   revealed = false;
   period: string = 'week';
 
-  constructor(private trafficListService: TrafficListData,
+  constructor(private  TotalPrediction_CalenderService: TrafficListData,
               private trafficBarService: TrafficBarData,
-              private TrafficListDataService : TrafficListService) {
+              private TrafficListDataService :  TotalPrediction_CalenderService) {
     this.getTrafficFrontCardData(this.period);
     this.getTrafficBackCardData(this.period);
   }

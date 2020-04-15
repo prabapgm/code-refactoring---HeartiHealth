@@ -38,7 +38,7 @@ import { SmartTableService } from './mock/smart-table.service';
  
 
 
-import { TrafficListService } from './mock/traffic-list.service';
+import {  TotalPrediction_CalenderService } from './mock/TotalPrediction_Calender.service';
 import { TodaysPredictionService } from './mock/TodaysPrediction.service';
 
 import { TrafficBarService } from './mock/traffic-bar.service';
@@ -78,7 +78,7 @@ const DATA_SERVICES = [
   
   
   
-  { provide: TrafficListData, useClass: TrafficListService },
+  { provide: TrafficListData, useClass:  TotalPrediction_CalenderService },
   { provide: EarningData, useClass: TodaysPredictionService },
   
   { provide: TrafficBarData, useClass: TrafficBarService },

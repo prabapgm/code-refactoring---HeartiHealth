@@ -7,7 +7,7 @@ import { SmartTableService } from './smart-table.service';
  
 
 
-import { TrafficListService } from './traffic-list.service';
+import {  TotalPrediction_CalenderService } from './TotalPrediction_Calender.service';
 import { PeriodsService } from './periods.service';
 import { TodaysPredictionService } from './TodaysPrediction.service';
 
@@ -29,7 +29,7 @@ const SERVICES = [
   
   
  
-  TrafficListService,
+   TotalPrediction_CalenderService,
   PeriodsService,
   TodaysPredictionService,
  

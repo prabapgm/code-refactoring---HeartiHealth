@@ -15,11 +15,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { ECommerceComponent } from './e-commerce.component';
 import { ProfitCardComponent } from './profit-card/profit-card.component';
-import { ECommerceChartsPanelComponent } from './charts-panel/charts-panel.component';
-import { OrdersChartComponent } from './charts-panel/charts/orders-chart.component';
-import { ProfitChartComponent } from './charts-panel/charts/profit-chart.component';
-import { ChartPanelHeaderComponent } from './charts-panel/chart-panel-header/chart-panel-header.component';
-import { ChartPanelSummaryComponent } from './charts-panel/chart-panel-summary/chart-panel-summary.component';
+
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
 import { StatsAreaChartComponent } from './profit-card/back-side/stats-area-chart.component';
@@ -31,13 +27,7 @@ import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traf
 import { TrafficCardsHeaderComponent } from './traffic-reveal-card/traffic-cards-header/traffic-cards-header.component';
 import { TrafficBackCardComponent } from './traffic-reveal-card/back-side/traffic-back-card.component';
 import { TrafficBarChartComponent } from './traffic-reveal-card/back-side/traffic-bar-chart.component';
- 
- 
-import { ECommerceLegendChartComponent } from './legend-chart/legend-chart.component';
-import { ECommerceUserActivityComponent } from './user-activity/user-activity.component';
   
-
- 
  
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
  
@@ -69,11 +59,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
     StatsAreaChartComponent,
     StatsBarAnimationChartComponent,
     ProfitCardComponent,
-    ECommerceChartsPanelComponent,
-    ChartPanelHeaderComponent,
-    ChartPanelSummaryComponent,
-    OrdersChartComponent,
-    ProfitChartComponent,
+     
     StatsCardBackComponent,
     TrafficRevealCardComponent,
     TrafficBarChartComponent,
@@ -82,8 +68,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
     TrafficBarComponent,
     TrafficCardsHeaderComponent,
     
-    ECommerceLegendChartComponent,
-    ECommerceUserActivityComponent,
+    
     
      
     EarningCardComponent,

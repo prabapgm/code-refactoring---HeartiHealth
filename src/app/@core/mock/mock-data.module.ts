@@ -17,9 +17,9 @@ import { TemperatureHumidityService } from './temperature-humidity.service';
 import { SolarService } from './solar.service';
 import { TrafficChartService } from './traffic-chart.service';
 import { StatsBarService } from './stats-bar.service';
-import { CountryOrderService } from './country-order.service';
+ 
 import { StatsProgressBarService } from './stats-progress-bar.service';
-import { VisitorsAnalyticsService } from './visitors-analytics.service';
+ 
 import { SecurityCamerasService } from './security-cameras.service';
 
 const SERVICES = [
@@ -39,9 +39,9 @@ const SERVICES = [
   SolarService,
   TrafficChartService,
   StatsBarService,
-  CountryOrderService,
+  
   StatsProgressBarService,
-  VisitorsAnalyticsService,
+  
   SecurityCamerasService,
 ];
 

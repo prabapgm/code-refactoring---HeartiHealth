@@ -30,8 +30,8 @@ export class TrafficListService extends TrafficListData {
 
 
   getDataForTodalPrediction(period :string ): Observable<TotalPredictionMapper[]> {
-    //return observableOf((TotalPredictionMapperData as any).default); 
-   return this.http.get<TotalPredictionMapper[]>(`${environment.totalPredictionUrl}${period}ly`);
+    return observableOf((TotalPredictionMapperData as any).default); 
+     //return this.http.get<TotalPredictionMapper[]>(`${environment.totalPredictionUrl}${period}ly`);
       
     }
   private getDataWeek(): TrafficList[] {

@@ -20,8 +20,8 @@ export class AuthServiceService {
   userData: any;
 
   login(userData){     
-     return this.apiService.get(this.authURL + userData.email);          
-    //return of({email:'testuser@example.com',password:'12345'});          
+     //return this.apiService.get(this.authURL + userData.email);          
+    return of({email:'testuser@example.com',password:'12345'});          
   }
 
 

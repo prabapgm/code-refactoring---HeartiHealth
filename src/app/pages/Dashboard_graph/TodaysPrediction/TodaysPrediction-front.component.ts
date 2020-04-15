@@ -6,7 +6,7 @@ import { LiveUpdateChart, EarningData } from '../../../@core/data/earning';
 import { LivePrediction } from '../../../@core/data/live-prediction';
 import { symptomPrediction } from '../../../@core/data/symptomPrediction';
 import { SymptomPredictonMapper } from '../../../@core/data/symptomPredictionMapper';
-import { EarningService } from '../../../@core/mock/earning.service';
+import { TodaysPredictionService } from '../../../@core/mock/TodaysPrediction.service';
 
 @Component({
   selector: 'ngx-TodaysPrediction-front',
@@ -26,7 +26,7 @@ export class TodaysPredictionFrontComponent implements OnDestroy, OnInit {
 
   constructor(private themeService: NbThemeService,
               private earningService: EarningData,
-              private earningDataService : EarningService) {
+              private earningDataService : TodaysPredictionService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {

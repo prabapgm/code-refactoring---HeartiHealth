@@ -9,7 +9,7 @@ import { SmartTableService } from './smart-table.service';
 
 import { TrafficListService } from './traffic-list.service';
 import { PeriodsService } from './periods.service';
-import { EarningService } from './earning.service';
+import { TodaysPredictionService } from './TodaysPrediction.service';
 
 import { TrafficBarService } from './traffic-bar.service';
  
@@ -31,7 +31,7 @@ const SERVICES = [
  
   TrafficListService,
   PeriodsService,
-  EarningService,
+  TodaysPredictionService,
  
   TrafficBarService,
   

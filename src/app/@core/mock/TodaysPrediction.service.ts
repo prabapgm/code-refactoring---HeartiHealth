@@ -8,8 +8,8 @@ import { environment } from '../../../environments/environment'
 
 @Injectable()
 
-export class EarningService  implements OnInit{
-//export class EarningService extends EarningData {
+export class TodaysPredictionService  implements OnInit{
+//export class TodaysPredictionService extends EarningData {
 
 
   

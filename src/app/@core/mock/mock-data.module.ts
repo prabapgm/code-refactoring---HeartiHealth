@@ -13,8 +13,8 @@ import { EarningService } from './earning.service';
 
 import { TrafficBarService } from './traffic-bar.service';
 import { ProfitBarAnimationChartService } from './profit-bar-animation-chart.service';
-import { TemperatureHumidityService } from './temperature-humidity.service';
-import { SolarService } from './solar.service';
+
+
 import { TrafficChartService } from './traffic-chart.service';
 import { StatsBarService } from './stats-bar.service';
  
@@ -35,8 +35,8 @@ const SERVICES = [
  
   TrafficBarService,
   ProfitBarAnimationChartService,
-  TemperatureHumidityService,
-  SolarService,
+ 
+  
   TrafficChartService,
   StatsBarService,
   

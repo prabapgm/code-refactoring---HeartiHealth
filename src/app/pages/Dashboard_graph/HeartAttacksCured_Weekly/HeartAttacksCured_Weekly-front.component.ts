@@ -5,7 +5,7 @@ import { HeartAttackCounter } from '../../../@core/data/heart-attack-counter';
 import { Observable, from } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router'; 
-import { ProfitBarAnimationChartService } from '../../../@core/mock/profit-bar-animation-chart.service' 
+ 
 
 
 @Component({

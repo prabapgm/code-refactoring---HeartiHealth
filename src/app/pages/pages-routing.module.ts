@@ -7,7 +7,7 @@ import { Dashboard_graphComponent } from './Dashboard_graph/Dashboard_graph.comp
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { HealthPredictorComponent } from './health-predictor/health-predictor.component';
 import { HealthPredictorResultComponent } from './health-predictor-result/health-predictor-result.component';
-import{ ProfitCardResolverService } from './../HeartAttacksCured_Weekly-resolver.service';
+import{ HeartAttacksCured_WeeklyResolverService } from '../@core/mock/HeartAttacksCured_Weekly-resolver.service';
 
 
 const routes: Routes = [{
@@ -17,7 +17,7 @@ const routes: Routes = [{
     {
       path: 'dashboard',
       component: Dashboard_graphComponent,
-      resolve: { dashboard : ProfitCardResolverService}
+      resolve: { dashboard : HeartAttacksCured_WeeklyResolverService}
     },
     
     {
@@ -85,7 +85,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [ProfitCardResolverService]
+  providers: [HeartAttacksCured_WeeklyResolverService]
 })
 export class PagesRoutingModule {
 }

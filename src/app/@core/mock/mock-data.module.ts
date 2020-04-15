@@ -12,7 +12,7 @@ import { PeriodsService } from './periods.service';
 import { EarningService } from './earning.service';
 
 import { TrafficBarService } from './traffic-bar.service';
-import { ProfitBarAnimationChartService } from './profit-bar-animation-chart.service';
+ 
 
 
 import { TrafficChartService } from './traffic-chart.service';
@@ -34,7 +34,7 @@ const SERVICES = [
   EarningService,
  
   TrafficBarService,
-  ProfitBarAnimationChartService,
+  
  
   
   TrafficChartService,

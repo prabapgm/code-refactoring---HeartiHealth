@@ -42,7 +42,7 @@ import { TrafficListService } from './mock/traffic-list.service';
 import { EarningService } from './mock/earning.service';
 
 import { TrafficBarService } from './mock/traffic-bar.service';
-import { ProfitBarAnimationChartService } from './mock/profit-bar-animation-chart.service';
+ 
 
 
 import { TrafficChartService } from './mock/traffic-chart.service';
@@ -82,7 +82,7 @@ const DATA_SERVICES = [
   { provide: EarningData, useClass: EarningService },
   
   { provide: TrafficBarData, useClass: TrafficBarService },
-  { provide: ProfitBarAnimationChartData, useClass: ProfitBarAnimationChartService },
+ 
  
   
   { provide: TrafficChartData, useClass: TrafficChartService },

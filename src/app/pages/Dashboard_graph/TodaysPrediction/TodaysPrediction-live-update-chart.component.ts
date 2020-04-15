@@ -7,7 +7,7 @@ import { SymptomPredictonMapper } from '../../../@core/data/symptomPredictionMap
 
 @Component({
   selector: 'ngx-earning-live-update-chart',
-  styleUrls: ['earning-card-front.component.scss'],
+  styleUrls: ['TodaysPrediction-front.component.scss'],
   template: `
     <div echarts
          class="echart"
@@ -15,7 +15,7 @@ import { SymptomPredictonMapper } from '../../../@core/data/symptomPredictionMap
          (chartInit)="onChartInit($event)"></div>
   `,
 })
-export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy, OnChanges {
+export class TodaysPredictionLiveUpdateChartComponent implements AfterViewInit, OnDestroy, OnChanges {
   private alive = true;
 
   //@Input() liveUpdateChartData: { value: [string, number] }[];

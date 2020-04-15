@@ -9,11 +9,11 @@ import { SymptomPredictonMapper } from '../../../@core/data/symptomPredictionMap
 import { EarningService } from '../../../@core/mock/earning.service';
 
 @Component({
-  selector: 'ngx-earning-card-front',
-  styleUrls: ['./earning-card-front.component.scss'],
-  templateUrl: './earning-card-front.component.html',
+  selector: 'ngx-TodaysPrediction-front',
+  styleUrls: ['./TodaysPrediction-front.component.scss'],
+  templateUrl: './TodaysPrediction-front.component.html',
 })
-export class EarningCardFrontComponent implements OnDestroy, OnInit {
+export class TodaysPredictionFrontComponent implements OnDestroy, OnInit {
   private alive = true;
 
   @Input() selectedCurrency: string = 'Chest Pain';

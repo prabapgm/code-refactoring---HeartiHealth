@@ -29,10 +29,10 @@ import { TrafficCardsHeaderComponent } from './traffic-reveal-card/traffic-cards
  
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
  
-import { EarningCardComponent } from './earning-card/earning-card.component';
+import { TodaysPredictionComponent } from './TodaysPrediction/TodaysPrediction.component';
 
-import { EarningCardFrontComponent } from './earning-card/earning-card-front.component';
-import { EarningLiveUpdateChartComponent } from './earning-card/earning-live-update-chart.component';
+import { TodaysPredictionFrontComponent } from './TodaysPrediction/TodaysPrediction-front.component';
+import { TodaysPredictionLiveUpdateChartComponent } from './TodaysPrediction/TodaysPrediction-live-update-chart.component';
 
 @NgModule({
   imports: [
@@ -68,10 +68,10 @@ import { EarningLiveUpdateChartComponent } from './earning-card/earning-live-upd
     
     
      
-    EarningCardComponent,
-    EarningCardFrontComponent,
+    TodaysPredictionComponent,
+    TodaysPredictionFrontComponent,
     
-    EarningLiveUpdateChartComponent,
+    TodaysPredictionLiveUpdateChartComponent,
   ],
   providers: [
     

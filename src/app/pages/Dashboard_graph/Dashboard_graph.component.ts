@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'ngx-ecommerce',
-  templateUrl: './e-commerce.component.html',
+  selector: 'ngx-Dashboard_graph',
+  templateUrl: './Dashboard_graph.component.html',
 })
-export class ECommerceComponent {
+export class Dashboard_graphComponent {
   constructor(private router: Router){
     // const isUserLoggedIn = JSON.parse(localStorage.getItem('isUserLoggedIn'));
 

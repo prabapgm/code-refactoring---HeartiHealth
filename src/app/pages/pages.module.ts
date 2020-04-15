@@ -6,7 +6,7 @@ import { NbMenuModule, NbCardModule, NbButtonModule, NbInputModule, NbRadioModul
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
 
-import { ECommerceModule } from './e-commerce/e-commerce.module';
+import { Dashboard_graphModule } from './Dashboard_graph/Dashboard_graph.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { HealthPredictorComponent } from './health-predictor/health-predictor.component';
@@ -20,7 +20,7 @@ import { HealthPredictorResultComponent } from './health-predictor-result/health
     ThemeModule,
     NbMenuModule,
     
-    ECommerceModule,
+    Dashboard_graphModule,
     MiscellaneousModule,
     NbCardModule,
     NbButtonModule,

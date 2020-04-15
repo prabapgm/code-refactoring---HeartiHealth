@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 
-import { ECommerceComponent } from './e-commerce/e-commerce.component';
+import { Dashboard_graphComponent } from './Dashboard_graph/Dashboard_graph.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { HealthPredictorComponent } from './health-predictor/health-predictor.component';
 import { HealthPredictorResultComponent } from './health-predictor-result/health-predictor-result.component';
@@ -16,7 +16,7 @@ const routes: Routes = [{
   children: [
     {
       path: 'dashboard',
-      component: ECommerceComponent,
+      component: Dashboard_graphComponent,
       resolve: { dashboard : ProfitCardResolverService}
     },
     
